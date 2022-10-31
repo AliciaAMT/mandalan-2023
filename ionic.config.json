@@ -1,0 +1,7 @@
+{
+  "name": "Mandalan Tales",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
