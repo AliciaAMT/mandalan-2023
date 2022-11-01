@@ -1,0 +1,5 @@
+authtype basic
+authgroupfile /dev/null
+authuserfile /home/content/m/i/r/miriamzohar/htconfig/.htpassword.ghtpassword
+authname "Secure Area"
+require user miriamzohar

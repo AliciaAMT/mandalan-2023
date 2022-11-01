@@ -1,0 +1,623 @@
+<?php
+
+include ('php/enemyevade.php');
+
+include ('php/enemyblock.php');
+
+include ('php/enemydeadt.php');
+
+include ('php/deadt.php');
+
+include ('../php/enemy.php');
+
+include ('../php/getstats.php');
+
+include ('php/getspeed.php');
+
+include ('php/getenemyspeed.php');
+
+include ('php/getstrength.php');
+
+include ('php/getlevel.php');
+
+include ('php/getbbleed.php');
+include ('php/countbleed.php');
+
+include ('php/getburn.php');
+include ('php/burncount.php');
+include ('php/getsmoke.php');
+
+$query = sprintf("select * from stats where username='%s';",mysql_real_escape_string($username));
+$result=mysql_query($query);
+
+while($row = mysql_fetch_array($result))
+  {
+  
+  if ($row['quickspell']=='None')
+  {
+  die ("<table class=\"page\"><tr><td class=\"border\">You do not have a quick spell set.<br /><br /><table class=\"page\"><tr><td class=\"page\">
+
+<table class=\"page\"><tr><td class=\"page\"><form action=\"nomovet.php?".time()."\" method=\"post\"><input class=\"small\" type=\"submit\" value=\"Back\" /></form></td></tr></table>
+
+</td></tr></table></td></tr></table></body></html>");
+  }
+  
+  else
+{
+  //change this code to spells code!!!
+//########################################################################
+
+if ($row['quickspell']=='Soothing Aloe 1')
+
+{
+
+$mana=$row['mana']+$bmana;
+
+if ($mana<5)
+
+{
+
+//not enough mana message
+
+die ("<table class=\"page\"><tr><td class=\"center\"><h3>Not Enough Mana</h3>You need more mana before you can cast this spell. Resting is a way to regenerate mana.</td></tr><tr><td class=\"page\">
+
+<table class=\"page\"><tr><td class=\"page\"><form action=\"nomovet.php?".time()."\" method=\"post\"><input class=\"small\" type=\"submit\" value=\"Back\" /></form></td></tr></table>
+
+</td></tr></table></body></html>");
+
+}
+
+else
+
+{
+
+$query=sprintf("update stats set mana=mana-5 where username='%s';",mysql_real_escape_string($username));
+
+mysql_query($query);
+
+
+$life=5;
+
+$bonus=$row['wisdom']/10;
+
+$bonus=$bonus+$row['level'];
+
+$life=$life+$bonus;
+
+$life=round($life);
+
+$clife=$row['life'];
+$clife=$clife+$blife;
+$cmaxlife=$row['maxlife'];
+$cmaxlife=$cmaxlife+$blife;
+
+
+
+if ($cmaxlife<$clife+$life)
+
+{
+
+$query=sprintf("update stats set life=maxlife where username='%s';",mysql_real_escape_string($username));
+
+mysql_query($query);
+
+$newlife=$row['maxlife']+$blife;
+
+$report="<span class=\"green\">You cast <b>".$row['quickspell']."</b> and heal <b>".$life." life</b>.</span><br />";
+
+if ($bleedcount>0)
+{
+//enemy bleeds, query amount and report add
+
+$query = sprintf("update enemy set enemybleed=enemybleed-1 where username='%s';",
+mysql_real_escape_string($username));
+mysql_query($query);
+
+$query = sprintf("update enemy set enemylife=enemylife-'%s' where username='%s';",
+mysql_real_escape_string($ebleedamt),
+mysql_real_escape_string($username));
+mysql_query($query);
+
+$report=$report."<span class=\"green\">Your enemy bleeds for <b>".$ebleedamt."</b> damage!</span><br />";
+
+
+}
+if ($burncount>0)
+{
+//enemy bleeds, query amount and report add
+
+$query = sprintf("update enemy set infernocount=infernocount-1 where username='%s';",
+mysql_real_escape_string($username));
+mysql_query($query);
+
+$query = sprintf("update enemy set enemylife=enemylife-'%s' where username='%s';",
+mysql_real_escape_string($eburnamt),
+mysql_real_escape_string($username));
+mysql_query($query);
+
+$report=$report."<span class=\"green\">Your enemy burns for <b>".$eburnamt."</b> damage!</span><br />";
+
+
+}
+
+//chance to attack again#########################################################
+$bspeed=$bspeed+$speed;
+
+//################################
+//echo "<script langauge=\"javascript\">alert(\"".$bspeed."\");</script>"; 
+
+$randspeed=mt_rand(1,100);
+$randspeed=$randspeed*$bspeed;
+$randespeed=mt_rand(1,500);
+$randespeed=$randespeed*$enemyspeed;
+ 
+
+
+//### TJ Edit Addin #######################################################
+//echo "<script langauge=\"javascript\">alert(\"".$randespeed."\");</script>"; 
+//echo "<script langauge=\"javascript\">alert(\"".$randspeed."\");</script>"; 
+//echo "<script langauge=\"javascript\">alert(\"".$report."\");</script>"; 
+
+
+
+if ($randspeed>$randespeed)
+{ 
+$move="You are fast enough for another move!";
+
+$report=$report.$move;
+
+$query = sprintf("update enemy set event='%s' where username='%s';",
+mysql_real_escape_string($report),
+mysql_real_escape_string($username));
+mysql_query($query);
+
+
+}
+else
+{
+
+
+include ('php/countert.php');
+
+$report=$report.$counter;
+
+$query = sprintf("update enemy set event='%s' where username='%s';",
+mysql_real_escape_string($report),
+mysql_real_escape_string($username));
+mysql_query($query);
+}
+
+}
+
+else
+
+{
+
+$newlife=$row['life']+$life+$blife;
+
+$query=sprintf("update stats set life=life+'%s' where username='%s';", mysql_real_escape_string($life), mysql_real_escape_string($username));
+
+mysql_query($query);
+
+$newlife=$row['life']+$life+$blife;
+
+
+
+$report="<span class=\"green\">You cast <b>".$row['quickspell']."</b> and heal <b>".$life." life</b>.</span><br />";
+
+if ($bleedcount>0)
+{
+//enemy bleeds, query amount and report add
+
+$query = sprintf("update enemy set enemybleed=enemybleed-1 where username='%s';",
+mysql_real_escape_string($username));
+mysql_query($query);
+
+$query = sprintf("update enemy set enemylife=enemylife-'%s' where username='%s';",
+mysql_real_escape_string($ebleedamt),
+mysql_real_escape_string($username));
+mysql_query($query);
+
+$report=$report."<span class=\"green\">Your enemy bleeds for <b>".$ebleedamt."</b> damage!</span><br />";
+
+
+}
+if ($burncount>0)
+{
+//enemy bleeds, query amount and report add
+
+$query = sprintf("update enemy set infernocount=infernocount-1 where username='%s';",
+mysql_real_escape_string($username));
+mysql_query($query);
+
+$query = sprintf("update enemy set enemylife=enemylife-'%s' where username='%s';",
+mysql_real_escape_string($eburnamt),
+mysql_real_escape_string($username));
+mysql_query($query);
+
+$report=$report."<span class=\"green\">Your enemy burns for <b>".$eburnamt."</b> damage!</span><br />";
+
+
+}
+
+//chance to attack again#########################################################
+$bspeed=$bspeed+$speed;
+
+//################################
+//echo "<script langauge=\"javascript\">alert(\"".$bspeed."\");</script>"; 
+
+$randspeed=mt_rand(1,100);
+$randspeed=$randspeed*$bspeed;
+$randespeed=mt_rand(1,500);
+$randespeed=$randespeed*$enemyspeed;
+ 
+
+
+//### TJ Edit Addin #######################################################
+//echo "<script langauge=\"javascript\">alert(\"".$randespeed."\");</script>"; 
+//echo "<script langauge=\"javascript\">alert(\"".$randspeed."\");</script>"; 
+//echo "<script langauge=\"javascript\">alert(\"".$report."\");</script>"; 
+
+
+
+if ($randspeed>$randespeed)
+{ 
+$move="You are fast enough for another move!";
+
+$report=$report.$move;
+
+$query = sprintf("update enemy set event='%s' where username='%s';",
+mysql_real_escape_string($report),
+mysql_real_escape_string($username));
+mysql_query($query);
+
+
+}
+else
+{
+
+
+include ('php/countert.php');
+
+$report=$report.$counter;
+
+$query = sprintf("update enemy set event='%s' where username='%s';",
+mysql_real_escape_string($report),
+mysql_real_escape_string($username));
+mysql_query($query);
+}
+}
+}
+}
+
+//##################################
+
+if ($row['quickspell']=="Fireball 1")
+
+{
+
+$damage=$damage+0;
+
+$mana=$row['mana']+$bmana;
+
+
+if ($mana<10)
+
+{
+
+die ("<table class=\"page\"><tr><td class=\"center\"><h3>Not Enough Mana</h3>You need more mana before you can cast this spell. Resting is a way to regenerate mana.</td></tr><tr><td class=\"page\">
+
+<table class=\"page\"><tr><td class=\"page\"><form action=\"nomovet.php?".time()."\" method=\"post\"><input class=\"small\" type=\"submit\" value=\"Back\" /></form></td></tr></table>
+
+
+</td></tr></table></body></html>");
+
+}
+
+else
+
+{
+
+$damage=$damage+mt_rand(1,10);
+
+$bonus=$row['wisdom']/10;
+
+$bonus=$bonus+$row['level'];
+
+$damage=$damage+$bonus;
+
+$damage=round($damage);
+
+//insert account for enemy fire resist############******************
+
+$rand=mt_rand(1,100);
+$rand=$rand*.01;
+$enemyburn=$enemyburn*$rand;
+$enemyburn=round($enemyburn);
+
+$chance=mt_rand(1,100);
+
+if ($enemyburn>$chance)
+{
+
+$query = sprintf("update enemy set infernocount=infernocount+3 where username='%s';",
+mysql_real_escape_string($username));
+mysql_query($query);
+
+$query = sprintf("update enemy set enemylife=enemylife-'%s' where username='%s';",
+mysql_real_escape_string($eburnamt),
+mysql_real_escape_string($username));
+mysql_query($query);
+
+$report=$report."<span class=\"green\">You cast inferno on your enemy and he burns for <b>".$eburnamt."</b> damage for 3 rounds!</span><br />";
+
+}
+
+//#############################################################smokescreen
+$rand=mt_rand(1,100);
+$rand=$rand*.01;
+$smoke=$smoke*$rand;
+$smoke=round($smoke);
+
+$chance=mt_rand(1,100);
+
+if ($smoke>$chance)
+{
+
+$query = sprintf("update enemy set enemyaccuracy=enemyaccuracy-'%s' where username='%s';",
+mysql_real_escape_string($smokeamt),
+mysql_real_escape_string($username));
+mysql_query($query);
+
+$report=$report."<span class=\"green\">You cast Smokescreen on your enemy and he is blinded by smoke!</span><br />";
+
+}
+
+
+
+$query=sprintf("update enemy set enemylife=enemylife-'%s' where username='%s';", mysql_real_escape_string($damage), mysql_real_escape_string($username));
+
+
+mysql_query($query);
+
+$query=sprintf("update stats set mana=mana-10 where username='%s';",mysql_real_escape_string($username));
+
+mysql_query($query);
+
+
+$report=$report."<span class=\"green\">You cast <b>".$row['quickspell']."</b> and deal <b>".$damage." fire damage</b>!</span><br />";
+
+if ($bleedcount>0)
+{
+//enemy bleeds, query amount and report add
+
+$query = sprintf("update enemy set enemybleed=enemybleed-1 where username='%s';",
+mysql_real_escape_string($username));
+mysql_query($query);
+
+$query = sprintf("update enemy set enemylife=enemylife-'%s' where username='%s';",
+mysql_real_escape_string($ebleedamt),
+mysql_real_escape_string($username));
+mysql_query($query);
+
+$report=$report."<span class=\"green\">Your enemy bleeds for <b>".$ebleedamt."</b> damage!</span><br />";
+
+
+}
+if ($burncount>0)
+{
+//enemy bleeds, query amount and report add
+
+$query = sprintf("update enemy set infernocount=infernocount-1 where username='%s';",
+mysql_real_escape_string($username));
+mysql_query($query);
+
+$query = sprintf("update enemy set enemylife=enemylife-'%s' where username='%s';",
+mysql_real_escape_string($eburnamt),
+mysql_real_escape_string($username));
+mysql_query($query);
+
+$report=$report."<span class=\"green\">Your enemy burns for <b>".$eburnamt."</b> damage!</span><br />";
+
+
+}
+
+//chance to attack again#########################################################
+$bspeed=$bspeed+$speed;
+
+//################################
+//echo "<script langauge=\"javascript\">alert(\"".$bspeed."\");</script>"; 
+
+$randspeed=mt_rand(1,100);
+$randspeed=$randspeed*$bspeed;
+$randespeed=mt_rand(1,500);
+$randespeed=$randespeed*$enemyspeed;
+ 
+
+
+//### TJ Edit Addin #######################################################
+//echo "<script langauge=\"javascript\">alert(\"".$randespeed."\");</script>"; 
+//echo "<script langauge=\"javascript\">alert(\"".$randspeed."\");</script>"; 
+//echo "<script langauge=\"javascript\">alert(\"".$report."\");</script>"; 
+
+
+
+if ($randspeed>$randespeed)
+{ 
+$move="You are fast enough for another move!";
+
+$report=$report.$move;
+
+$query = sprintf("update enemy set event='%s' where username='%s';",
+mysql_real_escape_string($report),
+mysql_real_escape_string($username));
+mysql_query($query);
+
+
+}
+else
+{
+
+
+include ('php/countert.php');
+
+$report=$report.$counter;
+
+$query = sprintf("update enemy set event='%s' where username='%s';",
+mysql_real_escape_string($report),
+mysql_real_escape_string($username));
+mysql_query($query);
+}
+
+
+
+}
+}
+
+//##############################################
+if ($row['quickspell']=="Burning Steam 1")
+
+{
+
+$damage=$damage+0;
+
+$mana=$row['mana']+$bmana;
+
+
+if ($mana<5)
+
+{
+
+die ("<table class=\"page\"><tr><td class=\"center\"><h3>Not Enough Mana</h3>You need more mana before you can cast this spell. Resting is a way to regenerate mana.</td></tr><tr><td class=\"page\">
+
+<table class=\"page\"><tr><td class=\"page\"><form action=\"nomovet.php?".time()."\" method=\"post\"><input class=\"small\" type=\"submit\" value=\"Back\" /></form></td></tr></table>
+
+
+</td></tr></table></body></html>");
+
+}
+
+else
+
+{
+
+//chance to miss##############################################***********&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+$damage=$damage+mt_rand(1,6);
+
+$bonus=$row['wisdom']/10;
+
+$bonus=$bonus+$row['level'];
+
+$damage=$damage+$bonus;
+
+$damage=round($damage);
+
+//insert account for enemy water resist############******************
+
+
+
+
+$query=sprintf("update enemy set enemylife=enemylife-'%s' where username='%s';", mysql_real_escape_string($damage), mysql_real_escape_string($username));
+
+
+mysql_query($query);
+
+$query=sprintf("update stats set mana=mana-5 where username='%s';",mysql_real_escape_string($username));
+
+mysql_query($query);
+
+
+$report="<span class=\"green\">You cast <b>".$row['quickspell']."</b> and deal <b>".$damage." water damage</b>!</span><br />";
+
+if ($bleedcount>0)
+{
+//enemy bleeds, query amount and report add
+
+$query = sprintf("update enemy set enemybleed=enemybleed-1 where username='%s';",
+mysql_real_escape_string($username));
+mysql_query($query);
+
+$query = sprintf("update enemy set enemylife=enemylife-'%s' where username='%s';",
+mysql_real_escape_string($ebleedamt),
+mysql_real_escape_string($username));
+mysql_query($query);
+
+$report=$report."<span class=\"green\">Your enemy bleeds for <b>".$ebleedamt."</b> damage!</span><br />";
+
+
+}
+
+if ($burncount>0)
+{
+//enemy bleeds, query amount and report add
+
+$query = sprintf("update enemy set infernocount=infernocount-1 where username='%s';",
+mysql_real_escape_string($username));
+mysql_query($query);
+
+$query = sprintf("update enemy set enemylife=enemylife-'%s' where username='%s';",
+mysql_real_escape_string($eburnamt),
+mysql_real_escape_string($username));
+mysql_query($query);
+
+$report=$report."<span class=\"green\">Your enemy burns for <b>".$eburnamt."</b> damage!</span><br />";
+
+
+}
+//chance to attack again#########################################################
+$bspeed=$bspeed+$speed;
+
+//################################
+//echo "<script langauge=\"javascript\">alert(\"".$bspeed."\");</script>"; 
+
+$randspeed=mt_rand(1,100);
+$randspeed=$randspeed*$bspeed;
+$randespeed=mt_rand(1,500);
+$randespeed=$randespeed*$enemyspeed;
+ 
+
+
+//### TJ Edit Addin #######################################################
+//echo "<script langauge=\"javascript\">alert(\"".$randespeed."\");</script>"; 
+//echo "<script langauge=\"javascript\">alert(\"".$randspeed."\");</script>"; 
+//echo "<script langauge=\"javascript\">alert(\"".$report."\");</script>"; 
+
+
+
+if ($randspeed>$randespeed)
+{ 
+$move="You are fast enough for another move!";
+
+$report=$report.$move;
+
+$query = sprintf("update enemy set event='%s' where username='%s';",
+mysql_real_escape_string($report),
+mysql_real_escape_string($username));
+mysql_query($query);
+
+
+}
+else
+{
+
+
+include ('php/countert.php');
+
+$report=$report.$counter;
+
+$query = sprintf("update enemy set event='%s' where username='%s';",
+mysql_real_escape_string($report),
+mysql_real_escape_string($username));
+mysql_query($query);
+}
+}
+}
+
+
+
+}
+
+}
+
+?>

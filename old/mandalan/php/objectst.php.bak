@@ -1,0 +1,312 @@
+<?php
+$query = sprintf("select map, xaxis, yaxis from stats where username='%s';",mysql_real_escape_string($username));
+$result=mysql_query($query);
+
+while($row = mysql_fetch_array($result))
+  {
+  if ($row['map']=="homeup")
+  {
+  if ($row['map']=="homeup" and $row['xaxis']==2 and $row['yaxis']==2)
+  {
+  echo "<h4><a href=\"objectt.php?".time();
+  echo "\">Rug</a></h4>";
+  }
+  
+if ($row['map']=="homeup" and $row['xaxis']==2 and $row['yaxis']==1)
+  {
+  echo "<h4><a href=\"gwatert.php?".time();
+  echo "\">Water Barrel</a></h4>";
+  }
+if ($row['map']=="homeup" and $row['xaxis']==3 and $row['yaxis']==1)
+  {
+  echo "<h4><a href=\"objectt.php?".time();
+  echo "\">Wardrobe</a></h4>";
+  }
+  
+if ($row['map']=="homeup" and $row['xaxis']==3 and $row['yaxis']==2)
+  {
+  echo "<h4><a href=\"objectt.php?".time();
+  echo "\">Desk</a></h4>";
+  }
+  
+if ($row['map']=="homeup" and $row['xaxis']==1 and $row['yaxis']==2)
+  {
+  echo "<h4><a href=\"objectt.php?".time();
+  echo "\">Coatrack</a></h4>";
+  }
+ 
+if ($row['map']=="homeup" and $row['xaxis']==1 and $row['yaxis']==3)
+  {
+  echo "</h4><a href=\"bedt.php\">Bed</a></h4>";
+  }
+  
+if ($row['map']=="homeup" and $row['xaxis']==2 and $row['yaxis']==3)
+  {
+  echo "<h4><a href=\"objectt.php?".time();
+  echo "\">Chest</a></h4>";
+  }
+ 
+if ($row['map']=="homeup" and $row['xaxis']==3 and $row['yaxis']==3)
+  {
+  echo "<h4><a href=\"objectt.php?".time();
+  echo "\">Shelf</a></h4>";
+  }
+}
+if ($row['map']=="home")
+{
+if ($row['map']=="home" and $row['xaxis']==1 and $row['yaxis']==1)
+  {
+  echo "<h4><a href=\"objectt.php?".time();
+  echo "\">Shelf</a></h4>";
+  }
+if ($row['map']=="home" and $row['xaxis']==2 and $row['yaxis']==1)
+  {
+  echo "<h4><a href=\"objectt.php?".time();
+  echo "\">Rug</a></h4>";
+  }
+  if ($row['map']=="home" and $row['xaxis']==3 and $row['yaxis']==1)
+  {
+  echo "<h4><a href=\"objectt.php?".time();
+  echo "\">Chest</a></h4>";
+  }
+  if ($row['map']=="home" and $row['xaxis']==3 and $row['yaxis']==2)
+  {
+  echo "<h4><a href=\"fireplacet.php?".time();
+  echo "\">Fireplace</a></h4>";
+  }
+  if ($row['map']=="home" and $row['xaxis']==2 and $row['yaxis']==2)
+  {
+  echo "<h4><a href=\"objectt.php?".time();
+  echo "\">Table</a></h4>";
+  }
+  if ($row['map']=="home" and $row['xaxis']==1 and $row['yaxis']==2)
+  {
+  echo "<h4><a href=\"objectt.php?".time();
+  echo "\">Shelf</a></h4>";
+  }
+  if ($row['map']=="home" and $row['xaxis']==1 and $row['yaxis']==3)
+  {
+  echo "<h4><a href=\"objectt.php?".time();
+  echo "\">Pantry</a></h4>";
+  }
+  if ($row['map']=="home" and $row['xaxis']==2 and $row['yaxis']==3)
+  {
+  echo "<h4><a href=\"objectt.php?".time();
+  echo "\">Herb Rack</a></h4>";
+  }
+  if ($row['map']=="home" and $row['xaxis']==3 and $row['yaxis']==3)
+  {
+  echo "<h4><a href=\"objectt.php?".time();
+  echo "\">Side Table</a></h4>";
+  }
+  }
+//****************************************new****************************
+if ($row['map']=="yard")
+{
+ if ($row['map']=="yard" and $row['xaxis']==3 and $row['yaxis']==3)
+  {
+  echo "<h4><a href=\"objectt.php?".time();
+  echo "\">Dog House</a></h4>";
+  }
+
+if ($row['map']=="yard" and $row['xaxis']==1 and $row['yaxis']==2)
+  {
+  echo "<h4><a href=\"objectt.php?".time();
+  echo "\">Melon Plants</a></h4>";
+  }
+
+if ($row['map']=="yard" and $row['xaxis']==2 and $row['yaxis']==2)
+  {
+  echo "<h4><a href=\"gwatert.php?".time();
+  echo "\">Well</a></h4>";
+  }
+
+if ($row['map']=="yard" and $row['xaxis']==3 and $row['yaxis']==2)
+  {
+  echo "<h4><a href=\"objectt.php?".time();
+  echo "\">Chicken Coop</a></h4>";
+  }
+
+if ($row['map']=="yard" and $row['xaxis']==2 and $row['yaxis']==1)
+  {
+  echo "<h4><a href=\"objectt.php?".time();
+  echo "\">Garden</a></h4>";
+  }
+
+
+if ($row['map']=="yard" and $row['xaxis']==3 and $row['yaxis']==1)
+  {
+  echo "<h4><a href=\"objectt.php?".time();
+  echo "\">Fruit Tree</a></h4>";
+  }
+
+}
+
+if ($row['map']=="barn")
+{
+
+if ($row['xaxis']==1 and $row['yaxis']==1)
+  {
+  echo "<h4><a href=\"objectt.php?".time();
+  echo "\">Wood Pile</a></h4>";
+  }
+  
+if ($row['xaxis']==1 and $row['yaxis']==2)
+  {
+  echo "<h4><a href=\"objectt.php?".time();
+  echo "\">Hay</a></h4>";
+  }
+
+if ($row['xaxis']==3 and $row['yaxis']==2)
+  {
+  echo "<h4><a href=\"objectt.php?".time();
+  echo "\">Canvas Sack</a></h4>";
+  }
+
+if ($row['xaxis']==1 and $row['yaxis']==3)
+  {
+  echo "<h4><a href=\"objectt.php?".time();
+  echo "\">Cheese Station</a></h4>";
+  }
+
+if ($row['xaxis']==3 and $row['yaxis']==3)
+  {
+  echo "<h4><a href=\"gwatert.php?".time();
+  echo "\">Water Trough</a></h4>";
+  }
+ if ($row['xaxis']==2 and $row['yaxis']==3)
+ {
+ echo "<h4><a href=\"objectt.php?".time();
+ echo "\">Cow</a></h4>";
+ }
+
+}
+
+if ($row['map']=="ishforest")
+{
+
+if ($row['xaxis']==1 and $row['yaxis']==1)
+  {
+  echo "<h4><a href=\"objectt.php?".time();
+  echo "\">Tree</a></h4>";
+  }
+
+if ($row['xaxis']==1 and $row['yaxis']==2)
+  {
+  echo "<h4><a href=\"objectt.php?".time();
+  echo "\">Tree</a></h4>";
+  }
+
+if ($row['xaxis']==1 and $row['yaxis']==3)
+  {
+  echo "<h4><a href=\"objectt.php?".time();
+  echo "\">Tree</a></h4>";
+  }
+
+if ($row['xaxis']==3 and $row['yaxis']==1)
+  {
+  
+  $rand=mt_rand(1,100);
+  
+  if ($rand>95)
+  {
+  echo "<h4><a href=\"objectt.php?".time();
+  echo "\">Plants</a></h4>";
+  }
+  }
+if ($row['xaxis']==4 and $row['yaxis']==1)
+  {
+  
+  $rand=mt_rand(1,100);
+  
+  if ($rand>95)
+  {
+  echo "<h4><a href=\"objectt.php?".time();
+  echo "\">Chest</a></h4>";
+  }
+  }
+
+
+
+if ($row['xaxis']==3 and $row['yaxis']==3)
+{
+
+echo "<h4><a href=\"fishingt.php?".time();
+  echo "\">Pond</a></h4>";
+
+}
+if ($row['xaxis']==4 and $row['yaxis']==3)
+{
+
+$rand=mt_rand(1,100);
+if ($rand>70)
+{
+echo "<h4><a href=\"objectt.php?".time();
+  echo "\">Plants</a></h4>";
+}
+}
+
+
+}
+if ($row['map']=="cellar")
+{
+
+if ($row['xaxis']==1 and $row['yaxis']==1)
+  {
+  echo "<h4><a href=\"objectt.php?".time();
+  echo "\">Canvas Sack</a></h4>";
+  }
+
+if ($row['xaxis']==3 and $row['yaxis']==1)
+  {
+  echo "<h4><a href=\"objectt.php?".time();
+  echo "\">Canvas Sack</a></h4>";
+  }
+
+if ($row['xaxis']==1 and $row['yaxis']==2)
+  {
+  echo "<h4><a href=\"objectt.php?".time();
+  echo "\">Crate</a></h4>";
+  }
+
+if ($row['xaxis']==3 and $row['yaxis']==2)
+  {
+  echo "<h4><a href=\"objectt.php?".time();
+  echo "\">Crate</a></h4>";
+  }
+
+if ($row['xaxis']==1 and $row['yaxis']==3)
+  {
+  echo "<h4><a href=\"objectt.php?".time();
+  echo "\">Bottle Rack</a></h4>";
+  }
+
+if ($row['xaxis']==3 and $row['yaxis']==3)
+  {
+  echo "<h4><a href=\"objectt.php?".time();
+  echo "\">Wine Rack</a></h4>";
+  }
+
+if ($row['xaxis']==1 and $row['yaxis']==4)
+  {
+  echo "<h4><a href=\"gwatert.php?".time();
+  echo "\">Water Barrel</a></h4>";
+  }
+
+if ($row['xaxis']==3 and $row['yaxis']==4)
+  {
+  echo "<h4><a href=\"objectt.php?".time();
+  echo "\">Shelf</a></h4>";
+  }
+
+if ($row['xaxis']==2 and $row['yaxis']==6)
+  {
+  echo "<h4><a href=\"objectt.php?".time();
+  echo "\">Chest</a></h4>";
+  }
+  
+}
+//**********************************************end new**********************************
+
+  }
+?>

@@ -1,0 +1,11 @@
+<?php
+
+echo "<table class=\"page\" width=\"100%\"><tr><td class=\"page\"><table class=\"main\">
+<tr>
+<td class=\"page\">";
+
+include ('php/quickstats.php');
+
+echo "</td><td class=\"page\"><div class=\"map\" id=\"myDiv\">";
+
+?>

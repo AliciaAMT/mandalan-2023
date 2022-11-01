@@ -1,0 +1,51 @@
+<?php
+$query = sprintf("select map, xaxis, yaxis from stats where username='%s';",mysql_real_escape_string($username));
+$result=mysql_query($query);
+
+	while($row = mysql_fetch_array($result))
+  {
+  if ($row['map']=="homeup" and $row['xaxis']==1 and $row['yaxis']==1)
+  {
+  echo "<h4><a href=\"portalt.php\">Stairs Down</a></h4>";
+  }
+  if ($row['map']=="home" and $row['xaxis']==1 and $row['yaxis']==1)
+  {
+  echo "<h4><a href=\"portalt.php\">Stairs Up</a></h4>";
+  }
+  if ($row['map']=="home" and $row['xaxis']==3 and $row['yaxis']==3)
+  {
+  echo "<h4><a href=\"portalt.php\">Front Door</a></h4>";
+  }
+  if ($row['map']=="home" and $row['xaxis']==2 and $row['yaxis']==1)
+  {
+  echo "<h4><a href=\"portalt.php\">Back Door</a></h4>";
+  }
+if ($row['map']=="yard" and $row['xaxis']==2 and $row['yaxis']==3)
+  {
+  echo "<h4><a href=\"portalt.php\">Back Door</a></h4>";
+  }
+
+if ($row['map']=="yard" and $row['xaxis']==1 and $row['yaxis']==3)
+  {
+  echo "<h4><a href=\"portalt.php\">Cellar Door</a></h4>";
+  }
+
+if ($row['map']=="yard" and $row['xaxis']==1 and $row['yaxis']==1)
+  {
+  echo "<h4><a href=\"portalt.php\">Barn Door</a></h4>";
+  }
+
+if ($row['map']=="cellar" and $row['xaxis']==2 and $row['yaxis']==1)
+  {
+  echo "<h4><a href=\"portalt.php\">Ladder Out of Cellar</a></h4>";
+  }
+if ($row['map']=="barn" and $row['xaxis']==2 and $row['yaxis']==1)
+  {
+  echo "<h4><a href=\"portalt.php\">Barn Door</a></h4>";
+  }
+if ($row['map']=="barn" and $row['xaxis']==3 and $row['yaxis']==1)
+  {
+  echo "<h4><a href=\"portalt.php\">Trap Door</a></h4>";
+  }
+  }
+?>

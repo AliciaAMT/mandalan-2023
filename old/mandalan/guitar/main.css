@@ -1,0 +1,176 @@
+
+body
+{
+background-color: rgb(0,0,0);
+font-family: georgia;
+font: 72px;
+color: rgb(210,180,150);
+margin: 0px;
+text-align: center;
+overflow: auto;
+
+}
+
+
+table
+{
+layout: fixed;
+border: 5px inset rgb(210,180,150);
+}
+
+table.page
+{
+layout: fixed;
+border: 0px;
+overflow: auto;
+}
+
+td
+{
+font: 28px;
+padding: 0px;
+border: 5px inset rgb(210,180,150);
+}
+
+td.skills
+{
+font: 24px;
+padding: 10px;
+border: 1px solid #105050;
+}
+td.frame
+{
+font: 24px;
+padding: 0px;
+border: 1px solid #105050;
+}
+
+td.cgskills
+{
+font: 24px;
+padding: 10px;
+border: 1px solid rgb(110,147,94);
+text-align: center;
+}
+
+td.bskills
+{
+font: 24px;
+padding: 5px;
+border: 7px inset rgb(210,180,150);
+text-align: center;
+}
+
+td.cskills
+{
+font: 24px;
+padding: 0px;
+border: 0px inset rgb(210,180,150);
+text-align: center;
+}
+
+td.lskills
+{
+font: 24px;
+padding: 0px;
+border: 0px inset rgb(210,180,150);
+text-align: left;
+}
+
+td.center
+{
+font: 36px;
+padding: 0px;
+border: 0px solid rgb(210,180,150);
+text-align: center;
+}
+
+td.page
+{
+font: 24px;
+padding: 0px;
+border: 0px;
+text-align: center;
+overflow: auto;
+}
+
+td.med
+{
+font: 42px;
+padding: 0px;
+border: 0px;
+text-align: center;
+overflow: auto;
+}
+
+td.title
+{
+font: 64px;
+padding: 0px;
+border: 0px;
+text-align: center;
+overflow: auto;
+}
+
+td.leftie
+{
+font: 24px;
+padding: 0px;
+border: 0px;
+text-align: left;
+overflow: auto;
+}
+td.rightie
+{
+font: 24px;
+padding: 0px;
+border: 0px;
+text-align: right;
+overflow: auto;
+}
+
+td.left
+{
+font: 36px;
+padding: 5px;
+border: 0px;
+text-align: left;
+}
+A:link 
+{
+color: #e1cdac; 
+
+}
+
+A:visited {
+color: #e1cdac; 
+
+}
+
+A:active {
+color: #ffffff; 
+
+}
+
+A:hover {
+color: #ffffff; 
+text-decoration: overline underline;
+}
+
+span.center
+{
+text-align: center;
+}
+
+html 
+{
+scrollbar-face-color: rgb(0,0,0);
+scrollbar-shadow-color: rgb(210,180,150);
+scrollbar-highlight-color: rgb(210,180,150);
+scrollbar-3dlight-color:rgb(210,180,150);
+scrollbar-darkshadow-color: rgb(210,180,150);
+scrollbar-track-color: rgb(0,0,0);
+scrollbar-arrow-color: rgb(210,180,150);
+}
+
+

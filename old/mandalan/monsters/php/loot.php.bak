@@ -1,0 +1,267 @@
+<?php
+
+include ('../php/getstats.php');
+
+$query=sprintf("update stats set wins=wins+1 where username='%s';", mysql_real_escape_string($username));
+mysql_query($query);
+
+$query=sprintf("update enemy set fight=0 where username='%s';", mysql_real_escape_string($username));
+mysql_query($query);
+
+$query=sprintf("select * from enemy where username='%s';", mysql_real_escape_string($username));
+$result=mysql_query($query);
+while($row = mysql_fetch_array($result))
+  {
+
+  
+if ($row['enemyname']=="Rat")
+{
+$experience=25*$row['enemylevel'];
+  if ($bexpbonus>0)
+  {
+  $experience=$experience*2;
+  }
+$query=sprintf("update inventory set keep=keep+1 where itemname='Rat Tail' and username='%s';", mysql_real_escape_string($username));
+mysql_query($query);
+
+$query=sprintf("update stats set experience=experience+'%s' where username='%s';", mysql_real_escape_string($experience), mysql_real_escape_string($username));
+mysql_query($query);
+
+echo "<div class=\"full\"><table class=\"page\"><tr><td class=\"border\"><br />You gain ".$experience." experience!<br /><br />You find:<br /><br /><img src=\"../images/rattail.png\" border=\"0\" /><br />Rat Tail";
+
+echo "<br /><br /><table class=\"page\"><tr><td class=\"page\"><table class=\"page\"><tr><td class=\"page\"><form action=\"../maingraphics.php?".time()."\" method=\"post\"><input class=\"small\" type=\"submit\" value=\"Continue\" /></form></td></tr></table></td></tr></table></td></tr></table></div></body></html>";
+}
+
+if ($row['enemyname']=="Cellar Spider")
+{
+include ('php/spidersilk.php');
+$experience=50*$row['enemylevel'];
+  if ($bexpbonus>0)
+  {
+  $experience=$experience*2;
+  }
+$query=sprintf("update stats set experience=experience+50 where username='%s';", mysql_real_escape_string($username));
+mysql_query($query);
+
+$query=sprintf("update stats set wins=wins+1 where username='%s';", mysql_real_escape_string($username));
+mysql_query($query);
+
+$query=sprintf("update enemy set fight=0 where username='%s';", mysql_real_escape_string($username));
+mysql_query($query);
+
+$query=sprintf("update flags set cellarspider=1 where username='%s';", mysql_real_escape_string($username));
+mysql_query($query);
+
+echo "<div class=\"full\"><table class=\"page\"><tr><td class=\"border\"><br />You gain 50 experience!<br /><br />You find:<br /><br /><img src=\"../images/web.png\" border=\"0\" /><br />Spider Silk<br /><br /><table class=\"page\"><tr><td class=\"page\"><table class=\"page\"><tr><td class=\"page\"><form action=\"../maingraphics.php?".time()."\" method=\"post\"><input class=\"small\" type=\"submit\" value=\"Continue\" /></form></td></tr></table></td></tr></table></td></tr></table></div></body></html>";
+}
+
+if ($row['enemyname']=="Spider")
+{
+$experience=25*$row['enemylevel'];
+  if ($bexpbonus>0)
+  {
+  $experience=$experience*2;
+  }
+include ('php/spidersilk.php');
+
+$query=sprintf("update stats set experience=experience+'%s' where username='%s';", mysql_real_escape_string($experience), mysql_real_escape_string($username));
+mysql_query($query);
+
+$query=sprintf("update stats set wins=wins+1 where username='%s';", mysql_real_escape_string($username));
+mysql_query($query);
+
+$query=sprintf("update enemy set fight=0 where username='%s';", mysql_real_escape_string($username));
+mysql_query($query);
+
+echo "<div class=\"full\"><table class=\"page\"><tr><td class=\"border\"><br />You gain ".$experience." experience!<br /><br />You find:<br /><br /><img src=\"../images/web.png\" border=\"0\" /><br />Spider Silk<br /><br /><table class=\"page\"><tr><td class=\"page\"><table class=\"page\"><tr><td class=\"page\"><form action=\"../maingraphics.php?".time()."\" method=\"post\"><input class=\"small\" type=\"submit\" value=\"Continue\" /></form></td></tr></table></td></tr></table></td></tr></table></div></body></html>";
+
+}
+
+if ($row['enemyname']=="Goblin")
+{
+$experience=35*$row['enemylevel'];
+  if ($bexpbonus>0)
+  {
+  $experience=$experience*2;
+  }
+
+  
+  include ('php/randother.php');
+  
+  
+$query=sprintf("update stats set experience=experience+'%s' where username='%s';", mysql_real_escape_string($experience), mysql_real_escape_string($username));
+mysql_query($query);
+
+echo "<div class=\"full\"><table class=\"page\"><tr><td class=\"border\"><br />You gain ".$experience." experience!<br /><br />You find:<br /><br /><img src=\"../images/".$itemimage.".png\" border=\"0\" /><br />".$itemname;
+
+echo "<br /><br /><table class=\"page\"><tr><td class=\"page\"><table class=\"page\"><tr><td class=\"page\"><form action=\"../maingraphics.php?".time()."\" method=\"post\"><input class=\"small\" type=\"submit\" value=\"Continue\" /></form></td></tr></table></td></tr></table></td></tr></table></div></body></html>";
+}
+
+if ($row['enemyname']=="Scorpion")
+{
+$experience=25*$row['enemylevel'];
+  if ($bexpbonus>0)
+  {
+  $experience=$experience*2;
+  }
+  $rand=mt_rand(1,10);
+  $goldadd=$row['enemylevel']*$rand;
+  $goldadd=round($goldadd);
+  
+$query=sprintf("update stats set gold=gold+'%s' where username='%s';", mysql_real_escape_string($goldadd),
+mysql_real_escape_string($username));
+mysql_query($query);
+
+$query=sprintf("update stats set experience=experience+'%s' where username='%s';", mysql_real_escape_string($experience), mysql_real_escape_string($username));
+mysql_query($query);
+
+echo "<div class=\"full\"><table class=\"page\"><tr><td class=\"border\"><br />You gain ".$experience." experience!<br /><br />You find:<br /><br /><img src=\"../images/gold.png\" border=\"0\" /><br />".$goldadd;
+
+echo "<br /><br /><table class=\"page\"><tr><td class=\"page\"><table class=\"page\"><tr><td class=\"page\"><form action=\"../maingraphics.php?".time()."\" method=\"post\"><input class=\"small\" type=\"submit\" value=\"Continue\" /></form></td></tr></table></td></tr></table></td></tr></table></div></body></html>";
+}
+
+if ($row['enemyname']=="Giant Scorpion")
+{
+$experience=25*$row['enemylevel'];
+  if ($bexpbonus>0)
+  {
+  $experience=$experience*2;
+  }
+  include ('php/gscorpionflag.php');
+  
+  
+  $rand=mt_rand(1,50);
+  $goldadd=$row['enemylevel']*$rand;
+  $goldadd=round($goldadd);
+  
+$query=sprintf("update stats set gold=gold+'%s' where username='%s';", mysql_real_escape_string($goldadd),
+mysql_real_escape_string($username));
+mysql_query($query);
+
+$query=sprintf("update stats set experience=experience+'%s' where username='%s';", mysql_real_escape_string($experience), mysql_real_escape_string($username));
+mysql_query($query);
+
+
+
+include ('../php/addlhol.php');
+
+echo "<div class=\"full\"><table class=\"page\"><tr><td class=\"border\"><br />You gain ".$experience." experience!<br /><br />You find:<br /><br /><img src=\"../images/gold.png\" border=\"0\" /><br />".$goldadd;
+
+echo "<br /><br /><img src=\"../images/leatherhead.png\" border=\"0\" /><br />Legendary Leather Headband of Life<br /><br /><table class=\"page\"><tr><td class=\"page\"><table class=\"page\"><tr><td class=\"page\"><form action=\"../maingraphics.php?".time()."\" method=\"post\"><input class=\"small\" type=\"submit\" value=\"Continue\" /></form></td></tr></table></td></tr></table></td></tr></table></div></body></html>";
+}
+if ($row['enemyname']=="Bat")
+{
+$experience=25*$row['enemylevel'];
+  if ($bexpbonus>0)
+  {
+  $experience=$experience*2;
+  }
+include ('php/addbatwings.php');
+
+$query=sprintf("update stats set experience=experience+'%s' where username='%s';", mysql_real_escape_string($experience), mysql_real_escape_string($username));
+mysql_query($query);
+
+echo "<div class=\"full\"><table class=\"page\"><tr><td class=\"border\"><br />You gain ".$experience." experience!<br /><br />You find:<br /><br /><img src=\"../images/batwings.png\" border=\"0\" /><br />Bat Wings";
+
+echo "<br /><br /><table class=\"page\"><tr><td class=\"page\"><table class=\"page\"><tr><td class=\"page\"><form action=\"../maingraphics.php?".time()."\" method=\"post\"><input class=\"small\" type=\"submit\" value=\"Continue\" /></form></td></tr></table></td></tr></table></td></tr></table></div></body></html>";
+}
+
+if ($row['enemyname']=="Giant Bat")
+{
+$experience=25*$row['enemylevel'];
+  if ($bexpbonus>0)
+  {
+  $experience=$experience*2;
+  }
+include ('php/addbatwings.php');
+
+$query=sprintf("update stats set experience=experience+'%s' where username='%s';", mysql_real_escape_string($experience), mysql_real_escape_string($username));
+mysql_query($query);
+
+$query=sprintf("update flags set giantbat=1 where username='%s';", mysql_real_escape_string($username));
+mysql_query($query);
+
+
+
+echo "<div class=\"full\"><table class=\"page\"><tr><td class=\"border\"><br />You gain ".$experience." experience!<br /><br />You find:<br /><br /><img src=\"../images/batwings.png\" border=\"0\" /><br />Bat Wings";
+
+echo "<br /><br /><img src=\"../images/ring1.png\" border=\"0\" /><br />Legendary Blood Red Ring";
+include ('php/addlbrr.php');
+echo "<br /><br /><table class=\"page\"><tr><td class=\"page\"><table class=\"page\"><tr><td class=\"page\"><form action=\"../maingraphics.php?".time()."\" method=\"post\"><input class=\"small\" type=\"submit\" value=\"Continue\" /></form></td></tr></table></td></tr></table></td></tr></table></div></body></html>";
+}
+
+if ($row['enemyname']=="Snake")
+{
+$experience=35*$row['enemylevel'];
+  if ($bexpbonus>0)
+  {
+  $experience=$experience*2;
+  }
+
+  $rand=mt_rand(1,100);
+  if ($rand>0 and $rand<98)
+  {
+  include ('php/randother.php');
+  }
+  else
+  {
+  include ('php/randitem1.php');
+  }
+  
+$query=sprintf("update stats set experience=experience+'%s' where username='%s';", mysql_real_escape_string($experience), mysql_real_escape_string($username));
+mysql_query($query);
+
+echo "<div class=\"full\"><table class=\"page\"><tr><td class=\"border\"><br />You gain ".$experience." experience!<br /><br />You find:<br /><br /><img src=\"../images/".$itemimage.".png\" border=\"0\" /><br />".$itemname;
+
+echo "<br /><br /><table class=\"page\"><tr><td class=\"page\"><table class=\"page\"><tr><td class=\"page\"><form action=\"../maingraphics.php?".time()."\" method=\"post\"><input class=\"small\" type=\"submit\" value=\"Continue\" /></form></td></tr></table></td></tr></table></td></tr></table></div></body></html>";
+}
+if ($row['enemyname']=="Giant Snake")
+{
+$experience=35*$row['enemylevel'];
+  if ($bexpbonus>0)
+  {
+  $experience=$experience*2;
+  }
+
+  
+  include ('php/randitem1.php');
+ 
+  
+$query=sprintf("update stats set experience=experience+'%s' where username='%s';", mysql_real_escape_string($experience), mysql_real_escape_string($username));
+mysql_query($query);
+
+$query=sprintf("update flags set giantsnake=1 where username='%s';", mysql_real_escape_string($username));
+mysql_query($query);
+
+echo "<div class=\"full\"><table class=\"page\"><tr><td class=\"border\"><br />You gain ".$experience." experience!<br /><br />You find:<br /><br /><img src=\"../images/".$itemimage.".png\" border=\"0\" /><br />".$itemname;
+
+echo "<br /><br /><table class=\"page\"><tr><td class=\"page\"><table class=\"page\"><tr><td class=\"page\"><form action=\"../maingraphics.php?".time()."\" method=\"post\"><input class=\"small\" type=\"submit\" value=\"Continue\" /></form></td></tr></table></td></tr></table></td></tr></table></div></body></html>";
+}
+
+if ($row['enemyname']=="Anubis")
+{
+$experience=35*$row['enemylevel'];
+  if ($bexpbonus>0)
+  {
+  $experience=$experience*2;
+  }
+
+  
+  include ('php/randitem1.php');
+  include ('php/addsetitem.php');
+  include ('php/addstela.php');
+ 
+  
+$query=sprintf("update stats set experience=experience+'%s' where username='%s';", mysql_real_escape_string($experience), mysql_real_escape_string($username));
+mysql_query($query);
+
+$query=sprintf("update flags set anubis=1 where username='%s';", mysql_real_escape_string($username));
+mysql_query($query);
+
+echo "<div class=\"full\"><table class=\"page\"><tr><td class=\"border\"><br />You gain ".$experience." experience!<br /><br />You find:<br /><br /><img src=\"../images/".$itemimage.".png\" border=\"0\" /><br />".$itemname;
+
+echo "<br /><br /><table class=\"page\"><tr><td class=\"page\"><table class=\"page\"><tr><td class=\"page\"><form action=\"../maingraphics.php?".time()."\" method=\"post\"><input class=\"small\" type=\"submit\" value=\"Continue\" /></form></td></tr></table></td></tr></table></td></tr></table></div></body></html>";
+}
+
+}
+  ?>

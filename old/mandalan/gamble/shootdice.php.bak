@@ -1,0 +1,65 @@
+<?php 
+$email=$_COOKIE["email"];
+
+if (!$email)
+{
+die ("<!DOCTYPE html PUBLIC\"-//W3C//DTD XHTML 1.0 Transitional//EN\"\"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\"><html xmlns=\"http://www.w3.org/1999/xhtml\"><head><meta name=\"Keywords\" content=\"\" /><meta name=\"Description\" content=\"\" /><link rel=\"stylesheet\" type=\"text/css\" href=\"main.css\" /><title>Mandala</title></head><body>Your session has expired. Please log in <a href=\"mandala.php\" target=\"_top\">Here</a></body></html>");
+}
+
+include ('header.php');
+
+include ('../connect.php');
+
+$amount=strip_tags($_POST["amount"]);
+
+include ('getgold.php');
+
+//sanitize
+
+if ($gold<$amount)
+
+{
+
+die ("You do not have enough gold!<br /><form action=\"dice.php\" method=\"post\"><input type=\"submit\" class=\"small\" value=\"Try Again\" /></form>");
+
+}
+
+$dice=mt_rand(2,12);
+$house=mt_rand(2,12);
+
+echo "<table class=\"page\"><tr><td class=\"border\">
+<h2>You Roll Dice Against the House!</h2>
+<span class=\"green\">You roll a ".$dice."!</span><br />
+<span class=\"red\">House rolls a ".$house."!</span><br />";
+
+if ($dice==$house)
+{
+echo "It is a DRAW.<br />";
+}
+
+if ($dice<$house)
+{
+echo "You lose ".$amount." gold! <br />";
+
+$query=sprintf("update stats set gold=gold-'%s' where username='%s';",
+mysql_real_escape_string($amount), mysql_real_escape_string($username));
+  mysql_query ($query);
+}
+
+if ($dice>$house)
+{
+echo "You win ".$amount." gold!<br />";
+
+$query=sprintf("update stats set gold=gold+'%s' where username='%s';",
+mysql_real_escape_string($amount), mysql_real_escape_string($username));
+  mysql_query ($query);
+}
+
+echo "<form action=\"dice.php\" method=\"post\"><input type=\"submit\" class=\"small\" value=\"Try Again\" /></form>";
+
+echo "</tr></td>
+</body>
+
+</html>";
+
+?>

@@ -1,0 +1,55 @@
+<?php
+$query = sprintf("select * from flags where username='%s';",mysql_real_escape_string($username));
+$result=mysql_query($query);
+while($row = mysql_fetch_array($result))
+  {
+
+echo "<table class=\"page\"><tr><td class=\"border\">
+
+<table class=\"page\"><tr><td class=\"page\"><h2>The Guild</h2></td></tr><tr><td class=\"left\">";
+
+if ($row['houseofelders']==0)
+{
+
+echo "'Ello there friend, and welcome to the village of Ishandar. Have you been to the House of Elders recently? It's very suspicious no one has seen Old Solias in months... but don't tell anyone I said that!";
+
+}
+
+if ($row['houseofelders']==1 and $row['anubis']==0)
+{
+
+echo "<p>'Ello there friend! So they wouldn't let you in the House of Elders to see Old Solias eh? I'm not surprised. Don't tell anyone I told you this, but I suspect they are holding Old Solias hostage there in that building against his will. The council here in the village of Ishandar has had their fair share of scandal these days, and Solias was determined to clean house. Some of the other elders did not like his plans for the future of the council.</p>
+<p>If you want to help Old Solias escape, I can tell you how. But first you must prove yourself capable and worthy. There is a pyramid just west of here. They say inside there is a stela that has on it inscribed the whereabouts of a great treasure. Bring me the stela, and I will share with you my plan to rescue Solias.</p>";
+
+}
+
+
+if ($row['anubis']==1)
+{
+
+echo "\"So! You have found the Stela! You have no idea what this Stela can do for the advancement of society! Here... I believe you are worthy to try to save Solias. Here is the key to the back door of the House of Elders. I happen to be the janitor. I'm telling you... Solias is being held against his will and the other council members will probably kill you if you are caught! Don't tell anyone I did this!\" the peasant hands you the key and abruptly shuts the door.</p>You gain +100 experience!";
+
+include ('php/addbackkey.php');
+
+$query=sprintf("update stats set experience=experience+100 where username='%s';",mysql_real_escape_string($username));
+mysql_query($query);
+
+$query=sprintf("update flags set anubis=2 where username='%s';",mysql_real_escape_string($username));
+mysql_query($query);
+}
+
+
+if ($row['anubis']==2)
+{
+
+echo "The peasant appears to be gone.";
+
+}
+
+
+
+echo "</td></tr><tr><td class=\"page\">
+<form action=\"maingraphics.php\" method=\"post\"><input type=\"submit\" class=\"small\" value=\"Ok\" /></form></td></tr></table></td></tr></table></body></html>";
+
+}
+?>

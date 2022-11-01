@@ -1,0 +1,8 @@
+<?php
+
+ $query = sprintf("update inventory set trade=trade-1 where itemnumber='%s' and username='%s';",
+   mysql_real_escape_string($itemnumber),
+mysql_real_escape_string($username));
+mysql_query($query);
+
+?>

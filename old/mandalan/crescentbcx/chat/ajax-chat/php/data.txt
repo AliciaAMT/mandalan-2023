@@ -1,0 +1,575 @@
+a:6:{s:4:"room";a:1:{s:6:"Alicia";s:9:"Main Room";}s:4:"user";a:1:{s:6:"Alicia";d:1258885184.9149849414825439453125;}s:4:"pass";a:1:{s:6:"Alicia";s:32:"49aff13fd768adb901b6aa4b0a488100";}s:4:"data";a:249:{i:0;s:20:"+
+Main Room
+Alicia";i:1;a:5:{s:4:"time";i:1235450062;s:4:"room";s:9:"Main Room";s:4:"user";s:6:"Alicia";s:4:"priv";s:1:".";s:4:"data";s:71:"m
+#5090d0
+Alicia
+.
+Hello, just testing a fresh chat room.%%qqb003%%";}i:2;a:5:{s:4:"time";i:1235450124;s:4:"room";s:9:"Main Room";s:4:"user";s:6:"Alicia";s:4:"priv";s:1:".";s:4:"data";s:115:"m
+#d0d090
+Alicia
+.
+Nice to see this works. Updates: fixed forum, just need to add the other rooms now I think. ";}i:3;a:5:{s:4:"time";i:1235450202;s:4:"room";s:9:"Main Room";s:4:"user";s:6:"Alicia";s:4:"priv";s:1:".";s:4:"data";s:136:"m
+#b03030
+Alicia
+.
+To Do: Fix smilies, add rooms to forum, work on more content, write forum welcome messages and make them stickies";}i:4;s:20:"-
+Main Room
+Alicia";i:5;s:20:"+
+Main Room
+Alicia";i:6;s:20:"-
+Main Room
+Alicia";i:7;s:20:"+
+Main Room
+Alicia";i:8;s:20:"-
+Main Room
+Alicia";i:9;s:20:"+
+Main Room
+Alicia";i:10;s:20:"-
+Main Room
+Alicia";i:11;s:20:"+
+Main Room
+Alicia";i:12;a:5:{s:4:"time";i:1235452819;s:4:"room";s:9:"Main Room";s:4:"user";s:6:"Alicia";s:4:"priv";s:1:".";s:4:"data";s:66:"m
+#50d0d0
+Alicia
+.
+Done with forum for now, just need content.";}i:13;s:20:"-
+Main Room
+Alicia";i:14;s:20:"+
+Main Room
+Alicia";i:15;s:20:"-
+Main Room
+Alicia";i:16;s:20:"+
+Main Room
+Alicia";i:17;s:20:"-
+Main Room
+Alicia";i:18;s:20:"+
+Main Room
+Alicia";i:19;s:20:"-
+Main Room
+Alicia";i:20;s:20:"+
+Main Room
+Alicia";i:21;s:20:"-
+Main Room
+Alicia";i:22;s:20:"+
+Main Room
+Alicia";i:23;s:20:"-
+Main Room
+Alicia";i:24;s:20:"+
+Main Room
+Alicia";i:25;a:5:{s:4:"time";i:1236119639;s:4:"room";s:9:"Main Room";s:4:"user";s:6:"Alicia";s:4:"priv";s:1:".";s:4:"data";s:68:"m
+#9050d0
+Alicia
+.
+I guess I will be working on this one a while";}i:26;s:20:"-
+Main Room
+Alicia";i:27;s:20:"+
+Main Room
+Alicia";i:28;a:5:{s:4:"time";i:1236120083;s:4:"room";s:9:"Main Room";s:4:"user";s:6:"Alicia";s:4:"priv";s:1:".";s:4:"data";s:53:"m
+#9050d0
+Alicia
+.
+http://www.mandalantales.info ";}i:29;a:5:{s:4:"time";i:1236120127;s:4:"room";s:9:"Main Room";s:4:"user";s:6:"Alicia";s:4:"priv";s:1:".";s:4:"data";s:107:"m
+#9050d0
+Alicia
+.
+&lt;a href=&quot;http://www.mandalantales.info&quot;&gt;mandalantales.info&lt;/a&gt;";}i:30;s:20:"-
+Main Room
+Alicia";i:31;s:20:"+
+Main Room
+Alicia";i:32;s:20:"-
+Main Room
+Alicia";i:33;s:20:"+
+Main Room
+Alicia";i:34;s:20:"-
+Main Room
+Alicia";i:35;s:20:"+
+Main Room
+Alicia";i:36;s:20:"-
+Main Room
+Alicia";i:37;s:20:"+
+Main Room
+Alicia";i:38;s:20:"-
+Main Room
+Alicia";i:39;s:20:"+
+Main Room
+Alicia";i:40;s:20:"-
+Main Room
+Alicia";i:41;s:20:"+
+Main Room
+Alicia";i:42;s:20:"-
+Main Room
+Alicia";i:43;s:20:"+
+Main Room
+Alicia";i:44;s:20:"-
+Main Room
+Alicia";i:45;s:20:"+
+Main Room
+Alicia";i:46;s:20:"-
+Main Room
+Alicia";i:47;s:20:"+
+Main Room
+Alicia";i:48;s:20:"-
+Main Room
+Alicia";i:49;s:20:"+
+Main Room
+Alicia";i:50;s:20:"-
+Main Room
+Alicia";i:51;s:20:"+
+Main Room
+Alicia";i:52;s:20:"-
+Main Room
+Alicia";i:53;s:20:"+
+Main Room
+Alicia";i:54;s:20:"-
+Main Room
+Alicia";i:55;s:20:"+
+Main Room
+Alicia";i:56;s:20:"-
+Main Room
+Alicia";i:57;s:20:"+
+Main Room
+Alicia";i:58;s:20:"-
+Main Room
+Alicia";i:59;s:20:"+
+Main Room
+Alicia";i:60;s:20:"-
+Main Room
+Alicia";i:61;s:20:"+
+Main Room
+Alicia";i:62;s:20:"-
+Main Room
+Alicia";i:63;s:20:"+
+Main Room
+Alicia";i:64;s:20:"-
+Main Room
+Alicia";i:65;s:20:"+
+Main Room
+Alicia";i:66;s:20:"-
+Main Room
+Alicia";i:67;s:20:"+
+Main Room
+Alicia";i:68;s:20:"-
+Main Room
+Alicia";i:69;s:20:"+
+Main Room
+Alicia";i:70;s:20:"-
+Main Room
+Alicia";i:71;s:20:"+
+Main Room
+Alicia";i:72;s:20:"-
+Main Room
+Alicia";i:73;s:20:"+
+Main Room
+Alicia";i:74;s:20:"-
+Main Room
+Alicia";i:75;s:20:"+
+Main Room
+Alicia";i:76;s:20:"-
+Main Room
+Alicia";i:77;s:20:"+
+Main Room
+Alicia";i:78;s:20:"-
+Main Room
+Alicia";i:79;s:20:"+
+Main Room
+Alicia";i:80;s:20:"-
+Main Room
+Alicia";i:81;s:20:"+
+Main Room
+Alicia";i:82;s:20:"-
+Main Room
+Alicia";i:83;s:20:"+
+Main Room
+Alicia";i:84;s:20:"-
+Main Room
+Alicia";i:85;s:20:"+
+Main Room
+Alicia";i:86;s:20:"-
+Main Room
+Alicia";i:87;s:20:"+
+Main Room
+Alicia";i:88;s:20:"-
+Main Room
+Alicia";i:89;s:20:"+
+Main Room
+Alicia";i:90;s:20:"-
+Main Room
+Alicia";i:91;s:20:"+
+Main Room
+Alicia";i:92;s:20:"-
+Main Room
+Alicia";i:93;s:20:"+
+Main Room
+Alicia";i:94;s:20:"-
+Main Room
+Alicia";i:95;s:20:"+
+Main Room
+Alicia";i:96;s:20:"-
+Main Room
+Alicia";i:97;s:20:"+
+Main Room
+Alicia";i:98;s:20:"-
+Main Room
+Alicia";i:99;s:20:"+
+Main Room
+Alicia";i:100;s:20:"-
+Main Room
+Alicia";i:101;s:20:"+
+Main Room
+Alicia";i:102;s:20:"-
+Main Room
+Alicia";i:103;s:20:"+
+Main Room
+Alicia";i:104;s:20:"-
+Main Room
+Alicia";i:105;s:20:"+
+Main Room
+Alicia";i:106;s:20:"-
+Main Room
+Alicia";i:107;s:20:"+
+Main Room
+Alicia";i:108;s:20:"-
+Main Room
+Alicia";i:109;s:20:"+
+Main Room
+Alicia";i:110;s:20:"-
+Main Room
+Alicia";i:111;s:20:"+
+Main Room
+Alicia";i:112;s:20:"-
+Main Room
+Alicia";i:113;s:20:"+
+Main Room
+Alicia";i:114;s:20:"-
+Main Room
+Alicia";i:115;s:20:"+
+Main Room
+Alicia";i:116;s:20:"-
+Main Room
+Alicia";i:117;s:20:"+
+Main Room
+Alicia";i:118;a:5:{s:4:"time";i:1236127565;s:4:"room";s:9:"Main Room";s:4:"user";s:6:"Alicia";s:4:"priv";s:1:".";s:4:"data";s:158:"m
+#9050d0
+Alicia
+.
+To Do: Change volunteer page to something else... what?... add personal works to library and start memoirs, also work on points program";}i:119;s:20:"-
+Main Room
+Alicia";i:120;s:20:"+
+Main Room
+Alicia";i:121;s:20:"-
+Main Room
+Alicia";i:122;s:20:"+
+Main Room
+Alicia";i:123;s:20:"-
+Main Room
+Alicia";i:124;s:20:"+
+Main Room
+Alicia";i:125;s:20:"-
+Main Room
+Alicia";i:126;s:20:"+
+Main Room
+Alicia";i:127;s:20:"-
+Main Room
+Alicia";i:128;s:20:"+
+Main Room
+Alicia";i:129;a:5:{s:4:"time";i:1236128035;s:4:"room";s:9:"Main Room";s:4:"user";s:6:"Alicia";s:4:"priv";s:1:".";s:4:"data";s:118:"m
+#d0d070
+Alicia
+.
+To Do: Change menu labels: Forum, Live Fellowship, Volunteer to Letters, Notes, Looking Glass ?";}i:130;a:5:{s:4:"time";i:1236128131;s:4:"room";s:9:"Main Room";s:4:"user";s:6:"Alicia";s:4:"priv";s:1:".";s:4:"data";s:106:"m
+#d0d070
+Alicia
+.
+Mad Hatter&#039;s House for chat since it is me talking to myself like I&#039;m mad";}i:131;a:5:{s:4:"time";i:1236128142;s:4:"room";s:9:"Main Room";s:4:"user";s:6:"Alicia";s:4:"priv";s:1:".";s:4:"data";s:34:"m
+#d0d070
+Alicia
+.
+%%qqb011%% ";}i:132;a:5:{s:4:"time";i:1236128147;s:4:"room";s:9:"Main Room";s:4:"user";s:6:"Alicia";s:4:"priv";s:1:".";s:4:"data";s:33:"m
+#d0d070
+Alicia
+.
+%%qqb006%%";}i:133;a:5:{s:4:"time";i:1236128441;s:4:"room";s:9:"Main Room";s:4:"user";s:6:"Alicia";s:4:"priv";s:1:".";s:4:"data";s:78:"m
+#30b0d0
+Alicia
+.
+Make this the TO DO room and the second random thoughts";}i:134;a:5:{s:4:"time";i:1236128511;s:4:"room";s:9:"Main Room";s:4:"user";s:6:"Alicia";s:4:"priv";s:1:".";s:4:"data";s:169:"m
+#30b0d0
+Alicia
+.
+Dear Abba instead of &quot;Dear Abby&quot; would be good for the forum. Doesn&#039;t go along with Alice in Wonderland theme, but I still like it.";}i:135;a:5:{s:4:"time";i:1236128590;s:4:"room";s:9:"Main Room";s:4:"user";s:6:"Alicia";s:4:"priv";s:1:".";s:4:"data";s:84:"m
+#30b0d0
+Alicia
+.
+&quot;The Couch&quot; for therapy/mental health related stuff";}i:136;a:5:{s:4:"time";i:1236128663;s:4:"room";s:9:"Main Room";s:4:"user";s:6:"Alicia";s:4:"priv";s:1:".";s:4:"data";s:63:"m
+#30b0d0
+Alicia
+.
+Eat Me for food and health related stuff";}i:137;a:5:{s:4:"time";i:1236128745;s:4:"room";s:9:"Main Room";s:4:"user";s:6:"Alicia";s:4:"priv";s:1:".";s:4:"data";s:64:"m
+#30b0d0
+Alicia
+.
+The Keyhole, for links to outside sources";}i:138;a:5:{s:4:"time";i:1236128847;s:4:"room";s:9:"Main Room";s:4:"user";s:6:"Alicia";s:4:"priv";s:1:".";s:4:"data";s:89:"m
+#30b0d0
+Alicia
+.
+Or maybe Drink Me for food and health and Eat Me for Bible studies";}i:139;a:5:{s:4:"time";i:1236128930;s:4:"room";s:9:"Main Room";s:4:"user";s:6:"Alicia";s:4:"priv";s:1:".";s:4:"data";s:116:"m
+#30b0d0
+Alicia
+.
+Curiouser and curiouser! for quirky things like supernatural-like or coincidences or miracles";}i:140;a:5:{s:4:"time";i:1236129765;s:4:"room";s:9:"Main Room";s:4:"user";s:6:"Alicia";s:4:"priv";s:1:".";s:4:"data";s:298:"m
+#d03050
+Alicia
+.
+Stay away from public forums, you only get your feelings hurt, and do some stress-free fun stuff like LoH or Culdcept. Forget about all responsibilies/projects aside from house/kids/husband for 1 day, and plan ahead with pre-prepared and pre-cleaned house for more relaxation";}i:141;a:5:{s:4:"time";i:1236129899;s:4:"room";s:9:"Main Room";s:4:"user";s:6:"Alicia";s:4:"priv";s:1:".";s:4:"data";s:84:"m
+#d03050
+Alicia
+.
+Cheshire Cat for fun/ funny stuff/site links and jokes I hear";}i:142;a:5:{s:4:"time";i:1236130175;s:4:"room";s:9:"Main Room";s:4:"user";s:6:"Alicia";s:4:"priv";s:1:".";s:4:"data";s:46:"m
+#d03050
+Alicia
+.
+TO DO: Laundry, Drawers";}i:143;s:20:"-
+Main Room
+Alicia";i:144;s:20:"+
+Main Room
+Alicia";i:145;s:20:"-
+Main Room
+Alicia";i:146;s:20:"+
+Main Room
+Alicia";i:147;s:20:"-
+Main Room
+Alicia";i:148;s:20:"+
+Main Room
+Alicia";i:149;s:20:"-
+Main Room
+Alicia";i:150;s:20:"+
+Main Room
+Alicia";i:151;a:5:{s:4:"time";i:1236174454;s:4:"room";s:9:"Main Room";s:4:"user";s:6:"Alicia";s:4:"priv";s:1:".";s:4:"data";s:72:"m
+#30d070
+Alicia
+.
+My hip is hurting today... I think I sprained it.";}i:152;s:20:"-
+Main Room
+Alicia";i:153;s:20:"+
+Main Room
+Alicia";i:154;s:20:"-
+Main Room
+Alicia";i:155;s:20:"+
+Main Room
+Alicia";i:156;s:20:"-
+Main Room
+Alicia";i:157;s:20:"+
+Main Room
+Alicia";i:158;a:5:{s:4:"time";i:1236175082;s:4:"room";s:9:"Main Room";s:4:"user";s:6:"Alicia";s:4:"priv";s:1:".";s:4:"data";s:100:"m
+#30d070
+Alicia
+.
+Grrr!!! The system is still putting slashes in the forum %%qqb012%%%%qqb013%%";}i:159;s:20:"-
+Main Room
+Alicia";i:160;s:17:"+
+Room 1
+Alicia";i:161;s:17:"-
+Room 1
+Alicia";i:162;s:20:"+
+Main Room
+Alicia";i:163;s:20:"-
+Main Room
+Alicia";i:164;s:20:"+
+Main Room
+Alicia";i:165;a:5:{s:4:"time";i:1236175787;s:4:"room";s:9:"Main Room";s:4:"user";s:6:"Alicia";s:4:"priv";s:1:".";s:4:"data";s:60:"m
+#30d070
+Alicia
+.
+Yay! I fixed the slashes! %%qqb003%% ";}i:166;s:20:"-
+Main Room
+Alicia";i:167;s:20:"+
+Main Room
+Alicia";i:168;s:20:"-
+Main Room
+Alicia";i:169;s:20:"+
+Main Room
+Alicia";i:170;s:20:"-
+Main Room
+Alicia";i:171;s:20:"+
+Main Room
+Alicia";i:172;a:5:{s:4:"time";i:1236200967;s:4:"room";s:9:"Main Room";s:4:"user";s:6:"Alicia";s:4:"priv";s:1:".";s:4:"data";s:73:"m
+#d0d090
+Alicia
+.
+To Do: Laundry, Kitchen, Relearn Scarborough Faire";}i:173;s:20:"-
+Main Room
+Alicia";i:174;s:20:"+
+Main Room
+Alicia";i:175;s:20:"-
+Main Room
+Alicia";i:176;s:20:"+
+Main Room
+Alicia";i:177;a:5:{s:4:"time";i:1236441447;s:4:"room";s:9:"Main Room";s:4:"user";s:6:"Alicia";s:4:"priv";s:1:".";s:4:"data";s:137:"m
+#30d0d0
+Alicia
+.
+TO DO: * Laundry * Dishes * Kitchen * Drawers * Cut Potatoes * Justin Read * Spanish Lesson * Scarborough Faire * ";}i:178;s:20:"-
+Main Room
+Alicia";i:179;s:17:"+
+Room 1
+Alicia";i:180;a:5:{s:4:"time";i:1236441492;s:4:"room";s:6:"Room 1";s:4:"user";s:6:"Alicia";s:4:"priv";s:1:".";s:4:"data";s:72:"m
+#30d0d0
+Alicia
+.
+I guess this room will be grocery list/ wish list";}i:181;a:5:{s:4:"time";i:1236441504;s:4:"room";s:6:"Room 1";s:4:"user";s:6:"Alicia";s:4:"priv";s:1:".";s:4:"data";s:30:"m
+#30d0d0
+Alicia
+.
+hangers";}i:182;a:5:{s:4:"time";i:1236441539;s:4:"room";s:6:"Room 1";s:4:"user";s:6:"Alicia";s:4:"priv";s:1:".";s:4:"data";s:54:"m
+#30d0d0
+Alicia
+.
+soup, Campbell&#039;s and Ramen";}i:183;a:5:{s:4:"time";i:1236441554;s:4:"room";s:6:"Room 1";s:4:"user";s:6:"Alicia";s:4:"priv";s:1:".";s:4:"data";s:36:"m
+#30d0d0
+Alicia
+.
+cooking wine ";}i:184;a:5:{s:4:"time";i:1236441569;s:4:"room";s:6:"Room 1";s:4:"user";s:6:"Alicia";s:4:"priv";s:1:".";s:4:"data";s:50:"m
+#30d0d0
+Alicia
+.
+spaghetti/macarroni noodles";}i:185;a:5:{s:4:"time";i:1236441580;s:4:"room";s:6:"Room 1";s:4:"user";s:6:"Alicia";s:4:"priv";s:1:".";s:4:"data";s:32:"m
+#30d0d0
+Alicia
+.
+sauce mix";}i:186;s:17:"-
+Room 1
+Alicia";i:187;s:17:"+
+Room 2
+Alicia";i:188;a:5:{s:4:"time";i:1236441667;s:4:"room";s:6:"Room 2";s:4:"user";s:6:"Alicia";s:4:"priv";s:1:".";s:4:"data";s:83:"m
+#30d0d0
+Alicia
+.
+I guess this room will just be random thoughts, or whatever.";}i:189;s:17:"-
+Room 2
+Alicia";i:190;s:20:"+
+Main Room
+Alicia";i:191;a:5:{s:4:"time";i:1236794246;s:4:"room";s:9:"Main Room";s:4:"user";s:6:"Alicia";s:4:"priv";s:1:".";s:4:"data";s:129:"m
+#d030d0
+Alicia
+.
+Maybe I am ready to start working on the game again for a while if I can&#039;t finish writing an article.";}i:192;s:20:"-
+Main Room
+Alicia";i:193;s:20:"+
+Main Room
+Alicia";i:194;s:20:"-
+Main Room
+Alicia";i:195;s:20:"+
+Main Room
+Alicia";i:196;s:20:"-
+Main Room
+Alicia";i:197;s:17:"+
+Room 1
+Alicia";i:198;s:17:"-
+Room 1
+Alicia";i:199;s:17:"+
+Room 1
+Alicia";i:200;s:17:"-
+Room 1
+Alicia";i:201;s:17:"+
+Room 2
+Alicia";i:202;a:5:{s:4:"time";i:1237091315;s:4:"room";s:6:"Room 2";s:4:"user";s:6:"Alicia";s:4:"priv";s:1:".";s:4:"data";s:74:"m
+#b050d0
+Alicia
+.
+forum isn&#039;t working at all now, why?%%qqb013%%";}i:203;s:17:"-
+Room 2
+Alicia";i:204;s:20:"+
+Main Room
+Alicia";i:205;s:20:"-
+Main Room
+Alicia";i:206;s:20:"+
+Main Room
+Alicia";i:207;a:5:{s:4:"time";i:1238357947;s:4:"room";s:9:"Main Room";s:4:"user";s:6:"Alicia";s:4:"priv";s:1:".";s:4:"data";s:85:"m
+#d0d030
+Alicia
+.
+I&#039;ve really been sick lately. Too many things to list... ";}i:208;s:20:"-
+Main Room
+Alicia";i:209;s:20:"+
+Main Room
+Alicia";i:210;s:20:"-
+Main Room
+Alicia";i:211;s:17:"+
+Room 1
+Alicia";i:212;s:17:"-
+Room 1
+Alicia";i:213;s:17:"+
+Room 2
+Alicia";i:214;s:17:"-
+Room 2
+Alicia";i:215;s:20:"+
+Main Room
+Alicia";i:216;a:5:{s:4:"time";i:1238358759;s:4:"room";s:9:"Main Room";s:4:"user";s:6:"Alicia";s:4:"priv";s:1:".";s:4:"data";s:52:"m
+#30d0d0
+Alicia
+.
+TO DO: something fun/relaxing";}i:217;s:20:"-
+Main Room
+Alicia";i:218;s:20:"+
+Main Room
+Alicia";i:219;s:20:"-
+Main Room
+Alicia";i:220;s:17:"+
+Room 1
+Alicia";i:221;s:17:"-
+Room 1
+Alicia";i:222;s:17:"+
+Room 2
+Alicia";i:223;s:17:"-
+Room 2
+Alicia";i:224;s:20:"+
+Main Room
+Alicia";i:225;s:20:"-
+Main Room
+Alicia";i:226;s:20:"+
+Main Room
+Alicia";i:227;s:20:"-
+Main Room
+Alicia";i:228;s:23:"+
+Main Room
+Angelique";i:229;s:23:"-
+Main Room
+Angelique";i:230;s:20:"+
+Room 1
+Angelique";i:231;s:20:"-
+Room 1
+Angelique";i:232;s:20:"+
+Room 2
+Angelique";i:233;s:20:"-
+Room 2
+Angelique";i:234;s:23:"+
+Main Room
+Angelique";i:235;s:23:"-
+Main Room
+Angelique";i:236;s:20:"+
+Main Room
+Alicia";i:237;s:20:"-
+Main Room
+Alicia";i:238;s:20:"+
+Main Room
+Alicia";i:239;s:20:"-
+Main Room
+Alicia";i:240;s:20:"+
+Main Room
+Alicia";i:241;s:20:"-
+Main Room
+Alicia";i:242;s:20:"+
+Main Room
+Alicia";i:243;s:20:"-
+Main Room
+Alicia";i:244;s:17:"+
+Room 2
+Alicia";i:245;s:17:"-
+Room 2
+Alicia";i:246;s:17:"+
+Room 1
+Alicia";i:247;s:17:"-
+Room 1
+Alicia";i:248;s:20:"+
+Main Room
+Alicia";}s:4:"kick";a:0:{}s:4:"mute";a:0:{}}

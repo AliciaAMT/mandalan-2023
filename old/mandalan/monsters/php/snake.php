@@ -1,0 +1,114 @@
+<?php
+include ('php/getlevel.php');
+include ('php/clearcounters.php');
+
+$rand=mt_rand(1,5);
+$elevel=$level+$rand;
+$elevel2=$elevel/2;
+$elevel2=round($elevel2);
+
+$elife=40+$elevel;
+$emaxlife=40+$elevel;
+$emana=0;
+$emaxmana=0;
+$e1dam=10+$elevel2;
+$e2dam=15+$elevel2;
+$espeed=35+$elevel;
+$eagility=35+$elevel;
+$eaccuracy=35+$elevel;
+$estrength=35+$elevel;
+$ewisdom=0;
+$eluck=10+$elevel;
+$edefense=10;
+$efireresist=0;
+$ewaterresist=0;
+$eearthresist=15+$elevel;
+$eairresist=0;
+$edarkresist=0;
+$elightresist=0;
+$emindresist=0;
+$eholdresist=0;
+$ebleedresist=0;
+$ecriticalresist=0;
+
+
+
+
+$query = sprintf("update enemy set enemy='snake' where username='%s';",mysql_real_escape_string($username));
+mysql_query($query);
+
+$query = sprintf("update enemy set enemyname='Snake' where username='%s';",mysql_real_escape_string($username));
+mysql_query($query);
+
+$enemylevel=mt_rand(10,20);
+$query = sprintf("update enemy set enemylevel='%s' where username='%s';",mysql_real_escape_string($elevel),
+mysql_real_escape_string($username));
+mysql_query($query);
+
+$enemylife=$elevel*5;
+$query = sprintf("update enemy set enemylife='%s' where username='%s';",mysql_real_escape_string($enemylife),
+mysql_real_escape_string($username));
+mysql_query($query);
+
+$query = sprintf("update enemy set enemymaxlife='%s' where username='%s';",
+mysql_real_escape_string($enemylife),
+mysql_real_escape_string($username));
+mysql_query($query);
+
+$query = sprintf("update enemy set enemymana=0 where username='%s';",mysql_real_escape_string($username));
+mysql_query($query);
+
+$query = sprintf("update enemy set enemymaxmana=0 where username='%s';",mysql_real_escape_string($username));
+mysql_query($query);
+
+$query = sprintf("update enemy set enemycondition='Good' where username='%s';",mysql_real_escape_string($username));
+mysql_query($query);
+
+$query = sprintf("update enemy set enemyatt1='Small Bite' where username='%s';",mysql_real_escape_string($username));
+mysql_query($query);
+
+$query = sprintf("update enemy set enemyatt1dam=28 where username='%s';",mysql_real_escape_string($username));
+mysql_query($query);
+
+$query = sprintf("update enemy set enemyatt2='Venomous Bite' where username='%s';",mysql_real_escape_string($username));
+mysql_query($query);
+
+$query = sprintf("update enemy set enemyatt2dam=33 where username='%s';",mysql_real_escape_string($username));
+mysql_query($query);
+
+$query = sprintf("update enemy set enemypower='Constriction' where username='%s';",mysql_real_escape_string($username));
+mysql_query($query);
+
+$query = sprintf("update enemy set event='Select an Option' where username='%s';",mysql_real_escape_string($username));
+mysql_query($query);
+
+$query = sprintf("update enemy set enemyspeed=20 where username='%s';",mysql_real_escape_string($username));
+mysql_query($query);
+
+$query = sprintf("update enemy set enemyagility=20 where username='%s';",mysql_real_escape_string($username));
+mysql_query($query);
+
+$query = sprintf("update enemy set enemystrength=15 where username='%s';",mysql_real_escape_string($username));
+mysql_query($query);
+
+$query = sprintf("update counters set bleed=0 where username='%s';",mysql_real_escape_string($username));
+mysql_query($query);
+
+$query = sprintf("update counters set inferno=0 where username='%s';",mysql_real_escape_string($username));
+mysql_query($query);
+
+
+$query = sprintf("update enemy set enemyblock=10 where username='%s';",mysql_real_escape_string($username));
+mysql_query($query);
+
+$query = sprintf("update enemy set enemyarmor=10 where username='%s';",mysql_real_escape_string($username));
+mysql_query($query);
+
+$query = sprintf("update enemy set enemyaccuracy=20 where username='%s';",mysql_real_escape_string($username));
+mysql_query($query);
+
+$query = sprintf("update enemy set fight=1 where username='%s';",mysql_real_escape_string($username));
+mysql_query($query);
+
+include ('php/clearcounters.php');
+  ?>

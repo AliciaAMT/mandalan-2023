@@ -1,0 +1,48 @@
+<?php
+
+$bbleed=0;
+//include ('php/getitembleed.php');************************************
+
+$query = sprintf("select * from skills where username='%s';",mysql_real_escape_string($username));
+$result=mysql_query($query);
+
+while($row = mysql_fetch_array($result))
+  {
+
+if ($lhweapontype=="Blade")
+
+{
+$bbleed=$bbleed+$row['sbbleed'];
+}
+
+if ($rhweapontype=="Blade")
+
+{
+$bbleed=$bbleed+$row['sbbleed'];
+}
+//$bbleed=$bbleed+$itembleed;
+$rand=mt_rand(1,100);
+
+if ($bbleed>$rand)
+{
+$bleedcount=3;
+//**********change bleedcount to take into account items************
+
+$damage=round($damage/3);
+
+$report=$report."<span class=\"green\">You seriously wound your enemy, causing bleeding and inflicting <b>".$damage."<b> damage!</span></br>";
+
+$query = sprintf("update enemy set enemylife=enemylife-'%s' where username='%s';",
+mysql_real_escape_string($damage),
+mysql_real_escape_string($username));
+mysql_query($query);
+
+$query = sprintf("update enemy set enemybleed='%s' where username='%s';",
+mysql_real_escape_string($bleedcount),
+mysql_real_escape_string($username));
+mysql_query($query);
+}
+
+}
+
+?>

@@ -1,0 +1,7 @@
+<?php
+
+$rand=mt_rand(1,6);
+
+echo $rand;
+
+?>

@@ -1,0 +1,1 @@
+<?php include ('php/header1.php'); ?><table class="page"><tr><td class="page"><h2>Links</h2></td></tr></table></body></html>

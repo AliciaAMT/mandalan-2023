@@ -1,0 +1,16 @@
+<?php
+
+
+echo "<table class=\"page\"><tr><td class=\"border\">
+
+<table class=\"page\"><tr><td class=\"page\"><h2>Join Guild</h2></td></tr><tr><td class=\"left\">Congratulations! You are now a member of the guild. Begin your quests by talking to the guildmaster, Alicia.
+
+<form action=\"dialogue/alicia.php\" method=\"post\"><input type=\"submit\" class=\"small\" value=\"Talk to Alicia\" /></form></td></tr>";
+
+
+
+echo "</td></tr><tr><td class=\"page\">
+<form action=\"maingraphics.php\" method=\"post\"><input type=\"submit\" class=\"small\" value=\"Leave\" /></form></td></tr></table></td></tr></table></body></html>";
+
+
+?>

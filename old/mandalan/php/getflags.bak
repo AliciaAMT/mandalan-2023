@@ -1,0 +1,51 @@
+<?php
+
+$query=sprintf("select * from flags where username='%s';", mysql_real_escape_string($username));
+
+$result = mysql_query($query);
+if(!$result) die("Failed : ".$query);
+// else by default
+while($row = mysql_fetch_array($result))
+  {
+  
+  $bedroomrug=$row['bedroomrug'];
+  $thehiddenkey=$row['quest2'];
+  $bedroomwardrobe=$row['bedroomwardrobe'];
+  $bedroomdesk=$row['bedroomdesk'];
+  $bedroomcoatrack=$row['bedroomcoatrack'];
+  $bedroomshelf=$row['bedroomshelf'];
+  $bedroomchest=$row['bedroomchest'];
+  $bedroombed=$row['bedroombed'];
+  $homeshelf=$row['homeshelf'];
+  $homerug=$row['homerug'];
+  $homechest=$row['homechest'];
+  $homeshelf2=$row['homeshelf2'];
+  $homerack=$row['homerack'];
+  $homepantry=$row['homepantry'];
+  $homedrawer=$row['homedrawer'];
+  $homefireplace=$row['homefireplace'];
+  $cellarspider=$row['cellarspider'];
+  $shepfeed=$row['shepfeed'];
+  $sheppet=$row['sheppet'];
+  $yardgarden=$row['yardgarden'];
+  $yardmelon=$row['yardmelon'];
+  $yardtree=$row['yardtree'];
+  $yardcoop=$row['yardcoop'];
+  $cellar11=$row['cellar11'];
+  $cellar31=$row['cellar31'];
+  $cellar12=$row['cellar12'];
+  $cellar32=$row['cellar32'];
+  $cellar11=$row['cellar13'];
+  $cellar31=$row['cellar33'];
+  $cellar12=$row['cellar14'];
+  $cellar32=$row['cellar34'];
+  $cellar26=$row['cellar26'];
+  $quest1=$row['quest1'];
+  
+  
+  
+  //***finish***
+  
+  
+  }
+?>

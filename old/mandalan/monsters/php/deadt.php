@@ -1,0 +1,32 @@
+<?php
+
+include ('../php/getstats.php');
+
+$query = sprintf("select life from stats where username='%s';",mysql_real_escape_string($username));
+$result=mysql_query($query);
+
+while($row = mysql_fetch_array($result))
+  {
+$life=$row['life'];
+$life=$life+$blife;
+
+  if ($life<1)
+{
+
+$rand=mt_rand(1,100);
+if ($rand<$brevivingjolt)
+{
+die ("<br /><br /><table class=\"page\"><tr><td class=\"border\">You have died! However, unexpectedly a great thunderbolt is summoned from the heavens and it jolts you back to life!<br  /><br /><table class=\"page\"><tr><td class=\"page\">
+<table class=\"page\"><tr><td class=\"page\"><form action=\"joltt.php?".time()."\" method=\"post\"><input class=\"small\" type=\"submit\" value=\"Go Towards the Light\" /></form></td></tr></table></td></tr></table></td></tr></table></body></html>");
+}
+
+else
+{
+
+die ("<br /><br /><table class=\"page\"><tr><td class=\"border\">You have died!<br  /><br /><table class=\"page\"><tr><td class=\"page\">
+<table class=\"page\"><tr><td class=\"page\"><form action=\"revivet.php?".time()."\" method=\"post\"><input class=\"small\" type=\"submit\" value=\"Go Towards the Light\" /></form></td></tr></table></td></tr></table></td></tr></table></body></html>");
+}
+
+}
+  }
+  ?>

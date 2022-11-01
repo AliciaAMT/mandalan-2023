@@ -1,0 +1,77 @@
+<?php
+
+include ('php/getstats.php');
+include ('php/getlockpick.php');
+include ('php/getmap.php');
+include ('php/getpick.php');
+include ('php/getlevel.php');
+include ('php/getluck.php');
+
+
+$lockpicking=$lockpicking+$blockpicking+$level+$luck+$bluck+$bthieving;
+
+$randl=rand(1,100);
+$lockpicking=$lockpicking*$randl;
+
+if ($lockpick<1)
+{
+die ("<table class=\"page\"><tr><td class=\"center\">You do not have a lockpick.</td></tr></table><br /><table class=\"page\"><tr><td class=\"page\"><form action=\"maingraphics.php?".time()."\" method=\"post\"><input class=\"small\" type=\"submit\" value=\"Back to Map\" /></form></td></tr></table></td></tr></table></body></html>");
+}
+
+if ($map=="home" and $xaxis==3 and $yaxis==1)
+{
+	        
+$rand=mt_rand(1,5);
+        
+if($lockpicking<$rand)
+{
+$query=sprintf("update inventory set keep=keep-1 where username='%s' and itemname='Lockpick';", mysql_real_escape_string($username));
+
+  mysql_query ($query);
+
+echo "<table class=\"page\"><tr><td class=\"center\"><img src=\"images/lockpick.png\" /></td></tr>";
+echo "<tr><td class=\"center\">";
+echo "You attempt to pick the lock, but your lockpick broke.";
+echo "</td></tr>";
+
+echo "<tr><td class=\"center\">";
+
+echo "<table class=\"page\"><tr><td class=\"page\"><form name=\"sleep\" action=\"object.php?".time();
+echo "\" method=\"get\"><input type=\"submit\" value=\"Try Again\" class=\"small\"></form></td></tr></table>";
+  
+echo "</td></tr></table>";
+
+}
+
+else
+
+{
+        
+  echo "<table class=\"page\"><tr><td class=\"center\" colspan=\"2\"><h3>You unlock the chest...</h3></td></tr><tr><td class=\"left\"><h3>Found:</h3></td><td class=\"center\"><img src=\"images/familycrest.png\" /><br />Family Crest Amulet</td></tr><tr><td class=\"left\"><h3>Experience:</h3></td><td class=\"left\"><h3>+5</h3></td></tr><tr><td class=\"left\"><h3>Quest Updated:</h3></td><td class=\"left\"><h3>\"The Family Crest Quest\"</h3></td></tr></table><br /><table class=\"page\"><tr><td class=\"page\"><form action=\"maingraphics.php?";
+
+echo time();
+
+echo "\" method=\"post\"><input class=\"small\" type=\"submit\" value=\"Back to Map\" /></form></td></tr></table>";
+
+  $query=sprintf("update flags set homechest=1 where username='%s';", mysql_real_escape_string($username));
+
+  mysql_query ($query);
+
+  $query=sprintf("update stats set experience=experience+5 where username='%s';", mysql_real_escape_string($username));
+
+  mysql_query ($query);
+  
+  $query=sprintf("update flags set quest4=1 where username='%s';", mysql_real_escape_string($username));
+
+  mysql_query ($query);
+
+include ('php/home31.php');
+
+  $query=sprintf("update flags set familycrest=1 where username='%s';", mysql_real_escape_string($username));
+  mysql_query ($query);
+
+}
+  }
+
+       
+?>

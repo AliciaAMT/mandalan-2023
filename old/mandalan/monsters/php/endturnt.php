@@ -1,0 +1,74 @@
+<?php
+
+if ($bleedcount>0)
+{
+//enemy bleeds, query amount and report add
+
+$query = sprintf("update enemy set enemybleed=enemybleed-1 where username='%s';",
+mysql_real_escape_string($username));
+mysql_query($query);
+
+$query = sprintf("update enemy set enemylife=enemylife-'%s' where username='%s';",
+mysql_real_escape_string($ebleedamt),
+mysql_real_escape_string($username));
+mysql_query($query);
+
+$report=$report."<span class=\"green\">Your enemy bleeds for <b>".$ebleedamt."</b> damage!</span><br />";
+
+
+}
+
+if ($burncount>0)
+{
+//enemy bleeds, query amount and report add
+
+$query = sprintf("update stats set infernocount=infernocount-1 where username='%s';",
+mysql_real_escape_string($username));
+mysql_query($query);
+
+$query = sprintf("update enemy set enemylife=enemylife-'%s' where username='%s';",
+mysql_real_escape_string($eburnamt),
+mysql_real_escape_string($username));
+mysql_query($query);
+
+$report=$report."<span class=\"green\">Your enemy burns for <b>".$eburnamt."</b> damage!</span><br />";
+
+
+}
+
+
+
+
+$bspeed=$bspeed+$speed;
+$randspeed=mt_rand(1,100);
+$randspeed=$randspeed*$bspeed;
+$randespeed=mt_rand(1,500);
+$randespeed=$randespeed*$enemyspeed;
+
+if ($randspeed>$randespeed)
+{ 
+$move="You are fast enough for another move!";
+
+$report=$report.$move;
+
+$query = sprintf("update enemy set event='%s' where username='%s';",
+mysql_real_escape_string($report),
+mysql_real_escape_string($username));
+mysql_query($query);
+
+}
+else
+{
+
+include ('php/countert.php');
+
+$report=$report.$counter;
+
+$query = sprintf("update enemy set event='%s' where username='%s';",
+mysql_real_escape_string($report),
+mysql_real_escape_string($username));
+mysql_query($query);
+}
+//end of end move *************************************
+
+?>

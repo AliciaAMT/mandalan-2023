@@ -1,0 +1,43 @@
+<?php
+
+
+include ('php/connect.php');
+
+$amt=0;
+$itemnumber=0;
+
+$query = sprintf("select * from inventory where username='%s' ;",mysql_real_escape_string($username));
+$result=mysql_query($query);
+
+	while($row = mysql_fetch_array($result))
+  {
+  if ($row['trade']>0)
+  {
+
+  $amt=$amt+$row['itemvalue'];
+
+  $itemnumber=$row['itemnumber'];
+
+ $query2=sprintf("update inventory set equip=0, equiplh=0, equiprh=0, keep=0, trade=0 where username='%s' and itemnumber='%s';", mysql_real_escape_string($username),
+mysql_real_escape_string($itemnumber));
+  mysql_query ($query2);
+  }
+  
+  
+  
+  }
+
+   $query = sprintf("update stats set gold=gold+'%s' where username='%s';",
+   mysql_real_escape_string($amt),
+mysql_real_escape_string($username));
+mysql_query($query);
+  
+  echo "<table class=\"page\"><tr><td class=\"border\">
+
+<table class=\"page\"><tr><td class=\"page\"><h2>Trade Items</h2><br />
+You sold all your trade items and gained ".$amt." gold.</td></tr><tr><td class=\"page\">
+<form action=\"maingraphics.php\" method=\"post\"><input type=\"submit\" class=\"small\" value=\"Leave\" /></form></td></tr></table></td></tr></table></body></html>";
+
+  
+
+?>

@@ -1,0 +1,677 @@
+<?php
+
+include ('php/enemydied.php');
+include ('php/dead.php');
+include ('../php/getstats.php');
+include ('php/getskills.php');
+include ('php/getestats.php');
+
+$query = sprintf("select * from stats where username='%s';",mysql_real_escape_string($username));
+$result=mysql_query($query);
+
+while($row = mysql_fetch_array($result))
+  {
+  $strength=$row['strength']+$bstrength;
+  $accuracy=$row['accuracy']+$baccuracy+$saccuracy;
+  $speed=$row['speed']+$bspeed;
+  $agility=$row['agility']+$bagility;
+  $wisdom=$row['wisdom']+$bwisdom;
+  $luck=$row['luck']+$bluck;  
+  
+  $rand=mt_rand(1,100);
+  $miss=mt_rand(1,125);
+  $miss=$miss-$accuracy-$luck;
+  if ($miss>$rand)
+  {
+  
+  $report="<span class=\"green\">You attack and <b>Miss!</b></span><br />";
+
+include ('php/endturn.php');
+  
+  }
+  else
+  {
+  //*******enemy chance to evade********
+  $rand=mt_rand(1,500);
+  $evade=$eagility;
+  if ($evade>$rand)
+  {
+  $report="<span class=\"green\">You attack and <b>the enemy evades!</b></span><br />";
+
+include ('php/endturn.php');
+  }
+  else
+  {
+    //***critical chance based on luck and crit****
+  $critical=$bcritical+$scritical+$luck;
+  $rand=mt_rand(1,200);
+  
+  if ($critical>$rand)
+  {
+  
+  
+  include ('php/getdamage.php');
+
+$strongbonus=$strength;
+$strongbonus=$strongbonus*.01;
+$strongbonus=$damage*$strongbonus;
+$damage=$damage+$strongbonus;
+
+$levelbonus=$row['level'];
+$damage=$damage+$levelbonus;
+
+$damage=round($damage);
+
+$query = sprintf("update enemy set enemylife=enemylife-'%s' where username='%s';",
+mysql_real_escape_string($damage),
+mysql_real_escape_string($username));
+mysql_query($query);
+
+$report="<span class=\"green\">You attack and hit with a <b>Critical Hit of ";
+$report=$report.$damage;
+$report=$report."!</b></span><br />";
+
+$rand=mt_rand(1,100);
+if ($sbleed+$bbleed>$rand)
+{
+$bleedcount=3;
+
+$damage=mt_rand(1,10);
+
+$report=$report."<span class=\"green\">You seriously wound your enemy, causing bleeding and inflicting <b>".$damage."<b> damage!</span></br>";
+
+$query = sprintf("update enemy set enemylife=enemylife-'%s' where username='%s';",
+mysql_real_escape_string($damage),
+mysql_real_escape_string($username));
+mysql_query($query);
+
+$query = sprintf("update counters set ebleed='%s' where username='%s';",
+mysql_real_escape_string($bleedcount),
+mysql_real_escape_string($username));
+mysql_query($query);
+}
+
+
+include ('php/endturn.php');
+    }
+  else
+  {
+  
+  $rand=mt_rand(1,100);
+  
+  if ($bvampiric>$rand)
+  {
+  include ('php/getdamage.php');
+  
+  $report="<span class=\"green\">You <b>Drain</b> your enemy's life for ".$damage." damage!</span><br />";
+
+  $query = sprintf("update enemy set enemylife=enemylife-'%s' where username='%s';",
+mysql_real_escape_string($damage),
+mysql_real_escape_string($username));
+mysql_query($query);
+
+$query = sprintf("update stats set life=life+'%s' where username='%s';",
+mysql_real_escape_string($damage),
+mysql_real_escape_string($username));
+mysql_query($query);
+
+  include ('php/endturn.php');
+  
+  }
+  else
+  {
+  
+  if ($scatapult+$bcatapult+$sscatapult>$rand)
+  {
+  include ('php/getdamage.php');
+  
+  $report="<span class=\"green\">You <b>Catapult</b> you enemy into the air for ".$damage." damage! You get to make another move!</span><br />";
+
+  $query = sprintf("update enemy set enemylife=enemylife-'%s' where username='%s';",
+mysql_real_escape_string($damage),
+mysql_real_escape_string($username));
+mysql_query($query);
+
+  $query = sprintf("update enemy set event='%s' where username='%s';",
+mysql_real_escape_string($report),
+mysql_real_escape_string($username));
+mysql_query($query);
+  
+  }
+  
+  else
+  {
+  
+  $rand=mt_rand(1,100);
+   if ($selemental+$sselemental>$rand)
+  {
+  include ('php/getdamage.php');
+  $damage=$damage+$selemental+$sselemental;
+  
+  $report="<span class=\"green\">You perform an <b>Elemental Attack</b> for <b>".$damage."</b> damage!</span><br />";
+
+  $query = sprintf("update enemy set enemylife=enemylife-'%s' where username='%s';",
+mysql_real_escape_string($damage),
+mysql_real_escape_string($username));
+mysql_query($query);
+  
+  include ('php/endturn.php');
+  }
+  else
+  {
+  $rand=mt_rand(1,100);
+  if ($smpoison+$spoison>$rand)
+  {
+  
+  include ('php/getdamage.php');
+  $damage=$damage+$spoison+$smpoison;
+  
+   $report="<span class=\"green\">You perform a <b>Poison Attack</b> for <b>".$damage."</b> damage!</span><br />";
+
+  $query = sprintf("update enemy set enemylife=enemylife-'%s' where username='%s';",
+mysql_real_escape_string($damage),
+mysql_real_escape_string($username));
+mysql_query($query);
+
+$query=sprintf("update counters set epoison=3 where username='%s';", mysql_real_escape_string($username));
+mysql_query($query);
+  
+  include ('php/endturn.php');
+  
+  }
+  
+  else
+  {
+  $rand=mt_rand(1,100);
+  if ($sfire+$smfire>$rand)
+  {
+  
+  
+  include ('php/getdamage.php');
+  $damage=$damage+$sfire+$smfire;
+  
+   $report="<span class=\"green\">You perform a <b>Fire Attack</b> for <b>".$damage."</b> damage!</span><br />";
+
+  $query = sprintf("update enemy set enemylife=enemylife-'%s' where username='%s';",
+mysql_real_escape_string($damage),
+mysql_real_escape_string($username));
+mysql_query($query);
+  
+$query=sprintf("update counters set einferno=3 where username='%s';", mysql_real_escape_string($username));
+mysql_query($query);
+  include ('php/endturn.php');
+  
+  }
+  
+  else
+  {
+  $rand=mt_rand(1,100);
+  if ($sstun>$rand)
+  {
+  
+  
+  include ('php/getdamage.php');
+  $damage=$damage+$sstun;
+  
+   $report="<span class=\"green\">You perform a <b>Stunning Attack</b> for <b>".$damage."</b> damage!</span><br />";
+
+  $query = sprintf("update enemy set enemylife=enemylife-'%s' where username='%s';",
+mysql_real_escape_string($damage),
+mysql_real_escape_string($username));
+mysql_query($query);
+  
+$query=sprintf("update counters set estun=3 where username='%s';", mysql_real_escape_string($username));
+mysql_query($query);
+  include ('php/endturn.php');
+  
+  }
+  
+  else
+  {
+  $rand=mt_rand(1,100);
+  if ($scrush>$rand)
+  {
+  
+  
+  include ('php/getdamage.php');
+  $damage=$damage+$scrush;
+  
+   $report="<span class=\"green\">You perform a <b>Crushing Attack</b> for <b>".$damage."</b> damage!</span><br />";
+
+  $query = sprintf("update enemy set enemylife=enemylife-'%s' where username='%s';",
+mysql_real_escape_string($damage),
+mysql_real_escape_string($username));
+mysql_query($query);
+ 
+  include ('php/endturn.php');
+  
+  }
+  
+  else
+  {
+  $rand=mt_rand(1,100);
+  if ($slongarm>$rand)
+  {
+  
+  
+  include ('php/getdamage.php');
+  $damage=$damage+$slongarm;
+  
+   $report="<span class=\"green\">You perform a <b>Longarm Attack</b> for <b>".$damage."</b> damage! You keep your enemy at bay and may move again.</span><br />";
+
+  $query = sprintf("update enemy set enemylife=enemylife-'%s' where username='%s';",
+mysql_real_escape_string($damage),
+mysql_real_escape_string($username));
+mysql_query($query);
+  
+  $query = sprintf("update enemy set event='%s' where username='%s';",
+mysql_real_escape_string($report),
+mysql_real_escape_string($username));
+mysql_query($query);
+  
+  }
+  
+   else
+  {
+  $rand=mt_rand(1,100);
+  if ($ssweepcombo>$rand)
+  {
+  
+  
+  include ('php/getdamage.php');
+  $damage=$damage+$ssweepcombo;
+  
+   $report="<span class=\"green\">You perform a <b>Sweep Combo Attack</b> for <b>".$damage."</b> damage! You keep your enemy down and may move again.</span><br />";
+
+  $query = sprintf("update enemy set enemylife=enemylife-'%s' where username='%s';",
+mysql_real_escape_string($damage),
+mysql_real_escape_string($username));
+mysql_query($query);
+  
+  $query = sprintf("update enemy set event='%s' where username='%s';",
+mysql_real_escape_string($report),
+mysql_real_escape_string($username));
+mysql_query($query);
+  
+  }
+  
+  else
+  {
+  $rand=mt_rand(1,100);
+  if ($sintimidate+$bfear>$rand)
+  {
+  
+  
+  include ('php/getdamage.php');
+  $damage=$damage+$sintimidate;
+  
+   $report=$report."<span class=\"green\">You perform an <b>Intimidating Attack</b> for <b>".$damage."</b> damage! Your enemy cowers and you may move again.</span><br />";
+
+  $query = sprintf("update enemy set enemylife=enemylife-'%s' where username='%s';",
+mysql_real_escape_string($damage),
+mysql_real_escape_string($username));
+mysql_query($query);
+  
+  $query = sprintf("update enemy set event='%s' where username='%s';",
+mysql_real_escape_string($report),
+mysql_real_escape_string($username));
+mysql_query($query);
+  
+  }
+  
+  
+  else
+  {
+  //***enemy block chance***
+  $block=$estrength+$espeed;
+  $rand=mt_rand(1,300);
+  if ($block>$rand)
+  {
+  
+  $report="<span class=\"green\">You attack and your enemy <b>Blocks!</b></span><br />";
+
+include ('php/endturn.php');  
+  
+  }
+  else
+  {
+  
+  $pierce=$accuracy+$luck;
+  $rand=mt_rand(1,200);
+  if ($pierce>$rand)
+  {
+  
+  include ('php/getdamage.php');
+
+$strongbonus=$strength;
+$strongbonus=$strongbonus*.01;
+$damage=$damage+$strongbonus;
+$amount=mt_rand(1,100);
+$amount=$amount*.01;
+$damage=round($damage*$amount);
+$levelbonus=$level;
+$damage=$damage+$levelbonus;
+
+$query = sprintf("update enemy set enemylife=enemylife-'%s' where username='%s';",
+mysql_real_escape_string($damage),
+mysql_real_escape_string($username));
+mysql_query($query);
+
+$report="<span class=\"green\">You attack and hit for <b>";
+$report=$report.$damage;
+$report=$report." </b>Damage!<br />";
+
+$rand=mt_rand(1,100);
+if ($bdoublestrike>$rand)
+{
+$query = sprintf("update enemy set enemylife=enemylife-'%s' where username='%s';",
+mysql_real_escape_string($damage),
+mysql_real_escape_string($username));
+mysql_query($query);
+
+$report="<span class=\"green\">You double strike and hit for <b>";
+$report=$report.$damage;
+$report=$report." </b>Damage!<br />";
+}
+
+$rand=mt_rand(1,100);
+if ($btriplestrike>$rand)
+{
+$query = sprintf("update enemy set enemylife=enemylife-'%s' where username='%s';",
+mysql_real_escape_string($damage),
+mysql_real_escape_string($username));
+mysql_query($query);
+
+$query = sprintf("update enemy set enemylife=enemylife-'%s' where username='%s';",
+mysql_real_escape_string($damage),
+mysql_real_escape_string($username));
+mysql_query($query);
+
+$report="<span class=\"green\">You double strike and hit for <b>";
+$report=$report.$damage;
+$report=$report." </b>Damage!<br />";
+
+$report="<span class=\"green\">You triple strike and hit for <b>";
+$report=$report.$damage;
+$report=$report." </b>Damage!<br />";
+}
+
+if ($bfire>0)
+{
+$query = sprintf("update enemy set enemylife=enemylife-'%s' where username='%s';",
+mysql_real_escape_string($bfire),
+mysql_real_escape_string($username));
+mysql_query($query);
+
+$report="<span class=\"green\">You hit with fire for <b>";
+$report=$report.$bfire;
+$report=$report." </b>Damage!<br />";
+}
+if ($bwater>0)
+{
+$query = sprintf("update enemy set enemylife=enemylife-'%s' where username='%s';",
+mysql_real_escape_string($bwater),
+mysql_real_escape_string($username));
+mysql_query($query);
+
+$report="<span class=\"green\">You hit with water for <b>";
+$report=$report.$bwater;
+$report=$report." </b>Damage!<br />";
+}
+
+if ($bair>0)
+{
+$query = sprintf("update enemy set enemylife=enemylife-'%s' where username='%s';",
+mysql_real_escape_string($bair),
+mysql_real_escape_string($username));
+mysql_query($query);
+
+$report="<span class=\"green\">You hit with lightning for <b>";
+$report=$report.$bair;
+$report=$report." </b>Damage!<br />";
+}
+
+if ($bearth>0)
+{
+$query = sprintf("update enemy set enemylife=enemylife-'%s' where username='%s';",
+mysql_real_escape_string($bearth),
+mysql_real_escape_string($username));
+mysql_query($query);
+
+$report="<span class=\"green\">You hit with earth for <b>";
+$report=$report.$bearth;
+$report=$report." </b>Damage!<br />";
+}
+
+if ($blight>0)
+{
+$query = sprintf("update enemy set enemylife=enemylife-'%s' where username='%s';",
+mysql_real_escape_string($blight),
+mysql_real_escape_string($username));
+mysql_query($query);
+
+$report="<span class=\"green\">You hit with light magic for <b>";
+$report=$report.$blight;
+$report=$report." </b>Damage!<br />";
+}
+
+if ($bdark>0)
+{
+$query = sprintf("update enemy set enemylife=enemylife-'%s' where username='%s';",
+mysql_real_escape_string($bdark),
+mysql_real_escape_string($username));
+mysql_query($query);
+
+$report="<span class=\"green\">You hit with dark magic for <b>";
+$report=$report.$bdark;
+$report=$report." </b>Damage!<br />";
+}
+
+
+$rand=mt_rand(1,100);
+if ($sbleed+$bbleed>$rand)
+{
+$bleedcount=3;
+
+$damage=mt_rand(1,10);
+
+$report=$report."<span class=\"green\">You seriously wound your enemy, causing bleeding and inflicting <b>".$damage."<b> damage!</span></br>";
+
+$query = sprintf("update enemy set enemylife=enemylife-'%s' where username='%s';",
+mysql_real_escape_string($damage),
+mysql_real_escape_string($username));
+mysql_query($query);
+
+$query = sprintf("update counters set ebleed='%s' where username='%s';",
+mysql_real_escape_string($bleedcount),
+mysql_real_escape_string($username));
+mysql_query($query);
+}
+
+
+
+include ('php/endturn.php');
+  
+  
+  }
+  else
+  {
+   include ('php/getdamage.php');
+
+$strongbonus=$strength;
+$strongbonus=$strongbonus*.01;
+$damage=$damage+$strongbonus;
+$amount=mt_rand(1,100);
+$amount=$amount*.01;
+$damage=round($damage*$amount);
+
+$levelbonus=$level;
+$damage=$damage+$levelbonus;
+
+include ('php/enemydeflect.php');
+
+$diffdam=$damage-$deflect;
+
+$query = sprintf("update enemy set enemylife=enemylife-'%s' where username='%s';",
+mysql_real_escape_string($diffdam),
+mysql_real_escape_string($username));
+mysql_query($query);
+
+$report="<span class=\"green\">You attack and hit for <b>";
+$report=$report.$damage;
+$report=$report." </b>Damage! <b>";
+$report=$report.$deflect;
+$report=$report." </b>Damage is Deflected!</b></span><br />";
+
+
+$rand=mt_rand(1,100);
+if ($bdoublestrike>$rand)
+{
+$query = sprintf("update enemy set enemylife=enemylife-'%s' where username='%s';",
+mysql_real_escape_string($damage),
+mysql_real_escape_string($username));
+mysql_query($query);
+
+$report=$report."<span class=\"green\">You double strike and hit for <b>";
+$report=$report.$damage;
+$report=$report." </b>Damage!<br />";
+}
+
+$rand=mt_rand(1,100);
+if ($btriplestrike>$rand)
+{
+$query = sprintf("update enemy set enemylife=enemylife-'%s' where username='%s';",
+mysql_real_escape_string($damage),
+mysql_real_escape_string($username));
+mysql_query($query);
+
+$query = sprintf("update enemy set enemylife=enemylife-'%s' where username='%s';",
+mysql_real_escape_string($damage),
+mysql_real_escape_string($username));
+mysql_query($query);
+
+$report=$report."<span class=\"green\">You double strike and hit for <b>";
+$report=$report.$damage;
+$report=$report." </b>Damage!<br />";
+
+$report=$report."<span class=\"green\">You triple strike and hit for <b>";
+$report=$report.$damage;
+$report=$report." </b>Damage!<br />";
+}
+
+$rand=mt_rand(1,100);
+if ($bdark>$rand)
+{
+$query = sprintf("update enemy set enemylife=enemylife-'%s' where username='%s';",
+mysql_real_escape_string($bdark),
+mysql_real_escape_string($username));
+mysql_query($query);
+
+$report=$report."<span class=\"green\">You hit with dark magic for <b>";
+$report=$report.$bdark;
+$report=$report." </b>Damage!<br />";
+}
+$rand=mt_rand(1,100);
+if ($blight>$rand)
+{
+$query = sprintf("update enemy set enemylife=enemylife-'%s' where username='%s';",
+mysql_real_escape_string($blight),
+mysql_real_escape_string($username));
+mysql_query($query);
+
+$report=$report."<span class=\"green\">You hit with light magic for <b>";
+$report=$report.$blight;
+$report=$report." </b>Damage!<br />";
+}
+$rand=mt_rand(1,100);
+if ($bfire>$rand)
+{
+$query = sprintf("update enemy set enemylife=enemylife-'%s' where username='%s';",
+mysql_real_escape_string($bfire),
+mysql_real_escape_string($username));
+mysql_query($query);
+
+$report=$report."<span class=\"green\">You hit with fire for <b>";
+$report=$report.$bfire;
+$report=$report." </b>Damage!<br />";
+}
+$rand=mt_rand(1,100);
+if ($bice>$rand)
+{
+$query = sprintf("update enemy set enemylife=enemylife-'%s' where username='%s';",
+mysql_real_escape_string($bice),
+mysql_real_escape_string($username));
+mysql_query($query);
+
+$report=$report."<span class=\"green\">You hit with water for <b>";
+$report=$report.$bice;
+$report=$report." </b>Damage!<br />";
+}
+$rand=mt_rand(1,100);
+if ($bair>$rand)
+{
+$query = sprintf("update enemy set enemylife=enemylife-'%s' where username='%s';",
+mysql_real_escape_string($bair),
+mysql_real_escape_string($username));
+mysql_query($query);
+
+$report=$report."<span class=\"green\">You hit with lightning for <b>";
+$report=$report.$bair;
+$report=$report." </b>Damage!<br />";
+}
+$rand=mt_rand(1,100);
+if ($bearth>$rand)
+{
+$query = sprintf("update enemy set enemylife=enemylife-'%s' where username='%s';",
+mysql_real_escape_string($bearth),
+mysql_real_escape_string($username));
+mysql_query($query);
+
+$report=$report."<span class=\"green\">You hit with earth for <b>";
+$report=$report.$bearth;
+$report=$report." </b>Damage!<br />";
+}
+
+$rand=mt_rand(1,100);
+if ($sbleed+$bbleed>$rand)
+{
+$bleedcount=3;
+
+$damage=mt_rand(1,10);
+
+$report=$report."<span class=\"green\">You seriously wound your enemy, causing bleeding and inflicting <b>".$damage."<b> damage!</span></br>";
+
+$query = sprintf("update enemy set enemylife=enemylife-'%s' where username='%s';",
+mysql_real_escape_string($damage),
+mysql_real_escape_string($username));
+mysql_query($query);
+
+$query = sprintf("update counters set ebleed='%s' where username='%s';",
+mysql_real_escape_string($bleedcount),
+mysql_real_escape_string($username));
+mysql_query($query);
+}
+
+
+
+
+include ('php/endturn.php');
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+
+
+  }
+  ?>

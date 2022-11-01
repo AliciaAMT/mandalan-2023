@@ -1,0 +1,21 @@
+<?php
+$lhweapontype="None";
+$rhweapontype="None";
+$query=sprintf("select * from inventory where username='%s' and equiplocation='Weapon';",mysql_real_escape_string($username));
+$result = mysql_query($query);
+while($row = mysql_fetch_array($result))
+	{
+	if ($row['equiplh']>0)
+	{
+	$lhweapontype=$row['weapontype'];
+	}
+	if ($row['equiprh']>0)
+	{
+	$rhweapontype=$row['weapontype'];
+	}
+	if ($row['equip']>1 and $row['equiplh']==0 and $row['equiprh']==0)
+	{
+	$dualweapontype=$row['weapontype'];
+	}
+	}
+?>

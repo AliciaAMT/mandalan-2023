@@ -1,0 +1,16 @@
+<?php
+include ('php/enemyevade.php');
+include ('php/enemyblock.php');
+include ('php/enemydead.php');
+include ('php/dead.php');
+$query = sprintf("select * from stats where username='%s';",mysql_real_escape_string($username));
+$result=mysql_query($query);
+while($row = mysql_fetch_array($result))
+  {
+$report="<span class=\"green\">You may continue your move.</span><br />";
+$query = sprintf("update stats set event='%s' where username='%s';",
+mysql_real_escape_string($report),
+mysql_real_escape_string($username));
+mysql_query($query);
+}
+?>

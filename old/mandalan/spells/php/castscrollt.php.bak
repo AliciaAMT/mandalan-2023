@@ -1,0 +1,358 @@
+<?php
+
+include ('../php/connect.php');
+include ('../php/getstats.php');
+include ('php/getsmoke.php');
+
+$spell=$_POST["type"];
+$number=$_POST["number"];
+
+include ('php/removescroll.php');
+
+$query=sprintf("select * from stats where username='%s';",mysql_real_escape_string($username));
+$result=mysql_query($query);
+while($row = mysql_fetch_array($result))
+{
+
+//############################
+if ($spell=='First Aide 1')
+
+{
+
+
+
+$life=5;
+
+$bonus=$row['wisdom']/10;
+
+$bonus=$bonus+$row['level'];
+
+$life=$life+$bonus;
+
+$life=round($life);
+
+$mana=$row['mana']-5;
+
+$clife=$row['life'];
+$clife=$clife+$blife;
+$cmaxlife=$row['maxlife'];
+$cmaxlife=$cmaxlife+$blife;
+
+if ($cmaxlife<$clife+$life)
+
+{
+
+$query=sprintf("update stats set life=maxlife where username='%s';",mysql_real_escape_string($username));
+
+mysql_query($query);
+
+$newlife=$row['maxlife']+$blife;
+
+}
+
+else
+
+{
+
+$newlife=$row['life']+$life+$blife;
+
+$query=sprintf("update stats set life=life+'%s' where username='%s';", mysql_real_escape_string($life), mysql_real_escape_string($username));
+
+
+mysql_query($query);
+
+$newlife=$row['life']+$life+$blife;
+
+}
+
+echo "<table class=\"page\"><tr><td class=\"center\"><h2>".$spell."</h2>You cast ".$spell." and heal ".$life." life.</td></tr><tr><td class=\"center\">Life: ".$newlife."/".$cmaxlife."</td></tr><tr><td class=\"center\">Mana: ".$mana."/".$row['maxmana']."</td></tr><tr><td class=\"center\"><table class=\"page\"><tr><td class=\"page\">";
+
+
+if ($row['fight']==1)
+
+
+{echo "<form action=\"../monsters/castt.php?";
+//write different script for healing/counter attack code
+
+
+echo time();
+
+
+echo "\" method=\"post\"><input class=\"small\" type=\"submit\" value=\"Back to Battle\" /></form>";}
+
+
+if ($row['fight']==0)
+
+
+{
+
+
+echo "<form action=\"elementalst.php?";
+
+
+echo time();
+
+
+echo "\" method=\"post\"><input class=\"small\" type=\"submit\" value=\"Back to Spellbook\" /></form></td></tr><tr><td class=\"page\">";
+
+
+echo "<form action=\"../maingraphict.php?";
+
+
+echo time();
+
+echo "\" method=\"post\"><input class=\"small\" type=\"submit\" value=\"Back to Map\" /></form>";
+
+}
+
+echo "</td></tr></table></td></tr></table>";
+
+}
+
+
+
+//############################
+if ($spell=='Soothing Aloe 1')
+
+{
+
+
+$life=5;
+
+$bonus=$row['wisdom']/10;
+
+$bonus=$bonus+$row['level'];
+
+$life=$life+$bonus;
+
+$life=round($life);
+
+
+$clife=$row['life'];
+$clife=$clife+$blife;
+$cmaxlife=$row['maxlife'];
+$cmaxlife=$cmaxlife+$blife;
+
+if ($cmaxlife<$clife+$life)
+
+{
+
+$query=sprintf("update stats set life=maxlife where username='%s';",mysql_real_escape_string($username));
+
+mysql_query($query);
+
+$newlife=$row['maxlife']+$blife;
+
+}
+
+else
+
+{
+
+$newlife=$row['life']+$life+$blife;
+
+$query=sprintf("update stats set life=life+'%s' where username='%s';", mysql_real_escape_string($life), mysql_real_escape_string($username));
+
+
+mysql_query($query);
+
+$newlife=$row['life']+$life+$blife;
+
+}
+
+
+
+echo "<table class=\"page\"><tr><td class=\"center\"><h2>".$spell."</h2>You cast ".$spell." and heal ".$life." life.</td></tr><tr><td class=\"center\">Life: ".$newlife."/".$cmaxlife."</td></tr><tr><td class=\"center\">Mana: ".$mana."/".$row['maxmana']."</td></tr><tr><td class=\"center\"><table class=\"page\"><tr><td class=\"page\">";
+
+
+if ($row['fight']==1)
+
+
+{echo "<form action=\"../monsters/castt.php?";
+//write different script for healing/counter attack code
+
+
+echo time();
+
+
+echo "\" method=\"post\"><input class=\"small\" type=\"submit\" value=\"Back to Battle\" /></form>";}
+
+
+if ($row['fight']==0)
+
+
+{
+
+
+echo "<form action=\"elementalst.php?";
+
+
+echo time();
+
+
+echo "\" method=\"post\"><input class=\"small\" type=\"submit\" value=\"Back to Spellbook\" /></form></td></tr><tr><td class=\"page\">";
+
+
+echo "<form action=\"../maingraphict.php?";
+
+
+echo time();
+
+echo "\" method=\"post\"><input class=\"small\" type=\"submit\" value=\"Back to Map\" /></form>";
+
+}
+
+echo "</td></tr></table></td></tr></table>";
+
+}
+
+
+
+//#################################
+if ($spell=="Fireball 1")
+
+{
+
+$damage=$damage+0;
+
+
+
+$damage=$damage+mt_rand(1,10);
+
+$bonus=$row['wisdom']/10;
+
+$bonus=$bonus+$row['level'];
+
+$damage=$damage+$bonus;
+
+$damage=round($damage);
+
+//insert account for enemy fire resist############******************
+
+$rand=mt_rand(1,100);
+$rand=$rand*.01;
+$enemyburn=$enemyburn*$rand;
+$enemyburn=round($enemyburn);
+
+$chance=mt_rand(1,100);
+
+if ($enemyburn>$chance)
+{
+
+$query = sprintf("update stats set infernocount=infernocount+3 where username='%s';",
+mysql_real_escape_string($username));
+mysql_query($query);
+
+$query = sprintf("update stats set enemylife=enemylife-'%s' where username='%s';",
+mysql_real_escape_string($eburnamt),
+mysql_real_escape_string($username));
+mysql_query($query);
+
+$report=$report."<span class=\"green\">You cast inferno on your enemy and he burns for <b>".$eburnamt."</b> damage for 3 rounds!</span><br />";
+
+}
+
+//#############################################################smokescreen
+$rand=mt_rand(1,100);
+$rand=$rand*.01;
+$smoke=$smoke*$rand;
+$smoke=round($smoke);
+
+$chance=mt_rand(1,100);
+
+if ($smoke>$chance)
+{
+
+$query = sprintf("update stats set enemyaccuracy=enemyaccuracy-'%s' where username='%s';",
+mysql_real_escape_string($smokeamt),
+mysql_real_escape_string($username));
+mysql_query($query);
+
+$report=$report."<span class=\"green\">You cast Smokescreen on your enemy and he is blinded by smoke!</span><br />";
+
+}
+
+
+$query=sprintf("update stats set enemylife=enemylife-'%s' where username='%s';", mysql_real_escape_string($damage), mysql_real_escape_string($username));
+
+
+mysql_query($query);
+
+
+echo "<table class=\"page\"><tr><td class=\"center\"><h2>".$spell."</h2>You cast ".$spell." and inflict ".$damage." damage.</td></tr><tr><td class=\"center\"><table class=\"page\"><tr><td class=\"page\">";
+
+
+if ($row['fight']==1)
+
+
+{echo "<form action=\"../monsters/castt.php?";
+//write different script for healing/counter attack code
+
+
+echo time();
+
+
+echo "\" method=\"post\"><input class=\"small\" type=\"submit\" value=\"Back to Battle\" /></form>";
+
+}
+
+echo "</td></tr></table></td></tr></table>";
+
+
+}
+
+
+//#################################
+if ($spell=="Burning Steam 1")
+
+{
+
+$damage=$damage+0;
+
+
+$damage=$damage+mt_rand(1,6);
+
+$bonus=$row['wisdom']/10;
+
+$bonus=$bonus+$row['level'];
+
+$damage=$damage+$bonus;
+
+$damage=round($damage);
+
+//insert account for enemy water resist############******************
+
+
+
+
+$query=sprintf("update stats set enemylife=enemylife-'%s' where username='%s';", mysql_real_escape_string($damage), mysql_real_escape_string($username));
+
+
+mysql_query($query);
+
+
+echo "<table class=\"page\"><tr><td class=\"center\"><h2>".$spell."</h2>You cast ".$spell." and inflict ".$damage." damage.</td></tr><tr><td class=\"center\"><table class=\"page\"><tr><td class=\"page\">";
+
+
+if ($row['fight']==1)
+
+
+{echo "<form action=\"../monsters/castt.php?";
+//write different script for healing/counter attack code
+
+
+echo time();
+
+
+echo "\" method=\"post\"><input class=\"small\" type=\"submit\" value=\"Back to Battle\" /></form>";
+
+}
+
+echo "</td></tr></table></td></tr></table>";
+
+
+}
+
+
+}
+?>

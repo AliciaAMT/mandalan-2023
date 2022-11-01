@@ -1,0 +1,33 @@
+<?php
+
+include ('php/headert1.php');
+include ('php/getitems.php');
+
+if ($milk>2)
+{
+echo "<table class=\"page\"><tr><td class=\"page\"><h3>You made one cheese.</h3><table class=\"page\"><tr><td class=\"page\"><form action=\"makecheeset.php?";
+
+echo time();
+echo "\" method=\"post\"><input class=\"small\" type=\"submit\" value=\"Make More Cheese\" /></form><br /><form action=\"maingraphict.php?";
+
+echo time();
+echo "\" method=\"post\"><input class=\"small\" type=\"submit\" value=\"Back to Map\" /></form></td></tr></table></td></tr></table>";
+  
+  include ('php/addcheese.php');
+  
+  $query = sprintf("update inventory set keep=keep-3 where itemname='Milk' and username='%s';",
+mysql_real_escape_string($username));
+mysql_query($query);
+  
+  }
+else 
+{
+echo "<table class=\"page\"><tr><td class=\"page\"><h3>You do not have enough milk.</h3><form action=\"maingraphict.php?";
+
+echo time();
+echo "\" method=\"post\"><input class=\"small\" type=\"submit\" value=\"Back to Map\" /></form></td></tr></table>";
+}
+
+  
+  echo "</body></html>";
+  ?>

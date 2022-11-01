@@ -1,0 +1,230 @@
+<?php
+$query = sprintf("select map, xaxis, yaxis from stats where username='%s';",mysql_real_escape_string($username));
+$result=mysql_query($query);
+while($row = mysql_fetch_array($result))
+  {
+  
+  if ($row['map']=="homeup")
+  {
+  if ($row['map']=="homeup" and $row['xaxis']==2 and $row['yaxis']==2)
+{
+echo "You are standing in the center of your bedroom. There is a rug under your feet and your father stands nearby. The floor is made of old loose planks.";
+}
+
+ if ($row['map']=="homeup" and $row['xaxis']==1 and $row['yaxis']==1)
+{
+echo "You are in the southwest corner of your room. There is a stairwell here leading downstairs. Walls block your way west and south.";
+}
+
+if ($row['map']=="homeup" and $row['xaxis']==2 and $row['yaxis']==1)
+{
+echo "You are by the south wall of your room. There is a large water barrel here.";
+}
+
+if ($row['map']=="homeup" and $row['xaxis']==3 and $row['yaxis']==1)
+{
+echo "You are in the southeast corner of your room. There is a large wardrobe here.";
+}
+
+if ($row['map']=="homeup" and $row['xaxis']==1 and $row['yaxis']==2)
+{
+echo "You are by the west wall of your room. There is a coatrack here.";
+}
+
+if ($row['map']=="homeup" and $row['xaxis']==3 and $row['yaxis']==2)
+{
+echo "You are by the east wall of your room. There is a desk here with a lighted candle, the only light in the small room.";
+}
+
+if ($row['map']=="homeup" and $row['xaxis']==1 and $row['yaxis']==3)
+{
+echo "You are in the northwest corner of your room. This is where your bed is located.";
+}
+
+if ($row['map']=="homeup" and $row['xaxis']==2 and $row['yaxis']==3)
+{
+echo "You by the north wall of your room. There is a large chest here.";
+}
+
+if ($row['map']=="homeup" and $row['xaxis']==3 and $row['yaxis']==3)
+{
+echo "You in the northeast corner of your room. There is a bookshelf here.";
+}
+
+
+}
+
+if ($row['map']=="home")
+{
+
+if ($row['map']=="home" and $row['xaxis']==1 and $row['yaxis']==1)
+{
+echo "You in the southwest corner of the first floor of your father's house. There is a flight of stairs leading up and a bookshelf against the stairs.";
+}
+
+if ($row['map']=="home" and $row['xaxis']==2 and $row['yaxis']==1)
+{
+echo "You by the south wall on the first floor of your father's house. Here is the back door and a small rug in front of the door.";
+}
+
+if ($row['map']=="home" and $row['xaxis']==3 and $row['yaxis']==1)
+{
+echo "You in the southeast corner of the first floor of your father's house. There is a large chest here.";
+}
+
+if ($row['map']=="home" and $row['xaxis']==1 and $row['yaxis']==2)
+{
+echo "You are by the west wall on the first floor of your father's house. There is a shelf here that appears to contain kitchen accessories.";
+}
+
+if ($row['map']=="home" and $row['xaxis']==2 and $row['yaxis']==2)
+{
+echo "You in the middle of the first floor of your father's house. There is a dinner table here with a plate of old food and a lighted candle.";
+}
+
+if ($row['map']=="home" and $row['xaxis']==3 and $row['yaxis']==2)
+{
+echo "You are by the east wall on the first floor of your father's house. There is a fireplace located here.";
+}
+
+if ($row['map']=="home" and $row['xaxis']==1 and $row['yaxis']==3)
+{
+echo "You are in the northwest corner on the first floor of your father's house. There is a pantry here.";
+}
+
+if ($row['map']=="home" and $row['xaxis']==2 and $row['yaxis']==3)
+{
+echo "You are by the north wall on the first floor of your father's house. There is a window here with an herb rack atop.";
+}
+
+if ($row['map']=="home" and $row['xaxis']==3 and $row['yaxis']==3)
+{
+echo "You are in the northeast corner on the first floor of your father's house. There is a front door here as well as a small end table with a drawer.";
+}
+}
+
+if ($row['map']=="yard")
+{
+if ($row['map']=="yard" and $row['xaxis']==1 and $row['yaxis']==1)
+{
+echo "You are in the southwest corner of your father's back yard. There is an old barn here that you may enter. Fences block your way west and south.";
+}
+
+if ($row['map']=="yard" and $row['xaxis']==2 and $row['yaxis']==1)
+{
+echo "You are in the south end of your father's back yard. There is a small garden here. A fence blocks your way south.";
+}
+
+if ($row['map']=="yard" and $row['xaxis']==3 and $row['yaxis']==1)
+{
+echo "You are in the southeast corner of your father's back yard. There is a fruit tree located here. Fences block your way east and south.";
+}
+
+if ($row['map']=="yard" and $row['xaxis']==1 and $row['yaxis']==2)
+{
+echo "You are at the western end of your father's back yard. There is a melon plant garden located here. A fence blocks your way west.";
+}
+
+if ($row['map']=="yard" and $row['xaxis']==2 and $row['yaxis']==2)
+{
+echo "You are in the center of your father's back yard. There is a water well here.";
+}
+
+if ($row['map']=="yard" and $row['xaxis']==3 and $row['yaxis']==2)
+{
+echo "You are at the eastern end of your father's back yard. There is a chicken coop here. A fence blocks your way east.";
+}
+
+if ($row['map']=="yard" and $row['xaxis']==1 and $row['yaxis']==3)
+{
+echo "You are in the northwest corner of your father's back yard. There is a cellar door here. A fence blocks your way to the west, and your father's house blocks your way north.";
+}
+
+if ($row['map']=="yard" and $row['xaxis']==2 and $row['yaxis']==3)
+{
+echo "You are in the northern end of your father's back yard. The yard is small, but your father has made good use of it's space. There is nothing here aside from the back door leading into your father's house. The house blocks passage to the north and the yard is completely enclosed by a wooden fence.";
+}
+if ($row['map']=="yard" and $row['xaxis']==3 and $row['yaxis']==3)
+{
+echo "You are in the northeast corner of your father's back yard. Old Shep, your father's dog, waits impatiently in front of his weathered dog house. A fence blocks your way east, and your father's house blocks passage to the north.";
+}
+}
+
+if ($row['map']=="cellar")
+{
+if ($row['map']=="cellar" and $row['xaxis']==1 and $row['yaxis']==1)
+{
+echo "You are in the southwest corner of your father's cellar. There is a canvas bag in the floor and walls block the way south and west.";
+}
+
+if ($row['map']=="cellar" and $row['xaxis']==2 and $row['yaxis']==1)
+{
+echo "You are in the southern end of your father's cellar. There is a ladder leading out of the cellar here, and a wall blocks the way south.";
+}
+
+if ($row['map']=="cellar" and $row['xaxis']==3 and $row['yaxis']==1)
+{
+echo "You are in the southeast corner of your father's cellar. There is a canvas bag in the floor and walls block the way south and east.";
+}
+
+if ($row['map']=="cellar" and $row['xaxis']==1 and $row['yaxis']==2)
+{
+echo "You are by the western wall of your father's cellar. There is a large crate in the floor and a wall blocks the way west.";
+}
+
+if ($row['map']=="cellar" and $row['xaxis']==2 and $row['yaxis']==2)
+{
+echo "You are in the middle of your father's cellar.";
+}
+
+if ($row['map']=="cellar" and $row['xaxis']==3 and $row['yaxis']==2)
+{
+echo "You are by the eastern wall of your father's cellar. There is a large crate in the floor and a wall blocks the way east.";
+}
+
+if ($row['map']=="cellar" and $row['xaxis']==1 and $row['yaxis']==3)
+{
+echo "You are by the western wall of your father's cellar. There is a rack of bottles here, and a wall blocks the way west.";
+}
+
+if ($row['map']=="cellar" and $row['xaxis']==2 and $row['yaxis']==3)
+{
+echo "You are in the middle of your father's cellar.";
+}
+
+if ($row['map']=="cellar" and $row['xaxis']==3 and $row['yaxis']==3)
+{
+echo "You are by the eastern wall of your father's cellar. There is a wine rack here, and a wall blocks the way east.";
+}
+
+if ($row['map']=="cellar" and $row['xaxis']==1 and $row['yaxis']==4)
+{
+echo "You are in the northwest corner of your father's cellar. There is a large barrel in the floor, and walls block the way east and north.";
+}
+
+if ($row['map']=="cellar" and $row['xaxis']==2 and $row['yaxis']==4)
+{
+echo "You are at the northern end of your father's cellar. There is a small passage that leads further north.";
+}
+
+if ($row['map']=="cellar" and $row['xaxis']==3 and $row['yaxis']==4)
+{
+echo "You are in the northeast corner of your father's cellar. There is a bookcase here, and walls block the way east and north.";
+}
+
+if ($row['map']=="cellar" and $row['xaxis']==2 and $row['yaxis']==5)
+{
+echo "You are in a passage in the northern end of your father's cellar. You may move north or south as the passage walls block east and west.";
+}
+
+if ($row['map']=="cellar" and $row['xaxis']==2 and $row['yaxis']==6)
+{
+echo "You are in a passage in the northern end of your father's cellar. This is the northernmost end of the passage and there is a large chest here and lots of cobwebs.";
+}
+
+}
+
+}
+
+
+?>

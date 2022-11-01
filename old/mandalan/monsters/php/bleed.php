@@ -1,0 +1,28 @@
+<?php
+
+
+$query = sprintf("select * from counters where username='%s';",mysql_real_escape_string($username));
+$result=mysql_query($query);
+
+while($row = mysql_fetch_array($result))
+  {
+if ($row['ebleed']>0)
+{
+  $damage=mt_rand(1,10);
+  $damage=round($damage);
+  
+$report=$report."<span class=\"green\">Your enemy is bleeding for <b>".$damage."<b> damage!</span></br>";
+
+$query = sprintf("update enemy set enemylife=enemylife-'%s' where username='%s';",
+mysql_real_escape_string($damage),
+mysql_real_escape_string($username));
+mysql_query($query);
+
+$query = sprintf("update counters set ebleed=ebleed-1 where username='%s';",
+mysql_real_escape_string($username));
+mysql_query($query);
+}
+
+}
+
+?>

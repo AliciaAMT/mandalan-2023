@@ -1,0 +1,40 @@
+<?php
+
+//*******************************
+include ('../php/getstats.php');
+include ('php/mystats.php');
+include ('php/ebleed.php');
+
+
+//********
+$randspeed=mt_rand(1,100);
+$randspeed=$randspeed+$enemyspeed-$bslow;
+$randmspeed=mt_rand(50,500);
+$randmspeed=$randmspeed+$speed;
+
+if ($randmspeed<$randspeed and $life>0)
+{ 
+$move="Your enemy is fast enough for another move!<br />";
+
+
+$counter=$counter.$move;
+
+$query = sprintf("update stats set event='%s' where username='%s';",
+mysql_real_escape_string($report),
+mysql_real_escape_string($username));
+mysql_query($query);
+
+include ('php/counter.php');
+
+}
+
+else
+{
+
+$query = sprintf("update stats set event='%s' where username='%s';",
+mysql_real_escape_string($report),
+mysql_real_escape_string($username));
+mysql_query($query);
+}
+
+?>

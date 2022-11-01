@@ -1,0 +1,31 @@
+<?php
+
+include ('../php/water.php');
+include ('php/enemydead.php');
+
+include ('php/dead.php');
+
+include ('../php/enemy.php');
+include ('../php/getstats.php');
+
+  
+  echo "<table class=\"page\"><tr><td class=\"border\">";
+ 
+  if ($water>0)
+  {
+  echo "<table class=\"page\"><tr><td class=\"page\" colspan=\"2\"><h2>Water</h2></td></tr><tr><td class=\"page\" colspan=\"2\">Eight hours worth of thirst quenching, life giving water.<br />Water Units: ";
+  echo $water;
+  echo "</td></tr><tr><td class=\"page\" width=\"375px\">Life +10<br />Mana +10</td><td class=\"page\"><table class=\"page\"><tr><td class=\"page\"><form action=\"drinkwater.php?".time()."\" method=\"post\"><input class=\"small\" type=\"submit\" value=\"Drink Water\" /></form></td></tr></table></td></tr></table>";
+  
+  echo "</td></tr></table>";
+  
+  echo "<table class=\"page\"><tr><td class=\"page\"><table class=\"page\"><tr><td class=\"page\"><form action=\"nomove.php?".time()."\" method=\"post\"><input class=\"small\" type=\"submit\" value=\"Back\" /></form></td></tr></table></td></tr></table></body></html>";
+  }
+  else
+  {
+  echo "You don't have water";
+  echo "<table class=\"page\"><tr><td class=\"page\"><table class=\"page\"><tr><td class=\"page\"><form action=\"nomove.php?".time()."\" method=\"post\"><input class=\"small\" type=\"submit\" value=\"Back\" /></form></td></tr></table>
+
+</td></tr></table></body></html>";
+  }
+?>

@@ -1,0 +1,106 @@
+<?php
+
+$query=sprintf("select * from inventory where username='%s';",mysql_real_escape_string($username));
+$result=mysql_query($query);
+
+while($row = mysql_fetch_array($result))
+
+{
+
+if ($row['itemname']=="Iron Skillet")
+{
+$skillet=$row['keep'];
+}
+
+if ($row['itemname']=="Raw Meat")
+{
+$rawmeat=$row['keep'];
+}
+
+if ($row['itemname']=="Fried Meat")
+{
+$friedmeat=$row['keep'];
+}
+
+if ($row['itemname']=="Bread")
+{
+$bread=$row['keep'];
+}
+
+if ($row['itemname']=="Fried Meat Sandwich")
+{
+$meatsandwich=$row['keep'];
+}
+
+if ($row['itemname']=="Apple")
+{
+$apples=$row['keep'];
+}
+
+if ($row['itemname']=="Cinnamon")
+{
+$cinnamon=$row['keep'];
+}
+
+if ($row['itemname']=="Sugar")
+{
+$sugar=$row['keep'];
+}
+
+if ($row['itemname']=="Applesauce")
+{
+$applesauce=$row['keep'];
+}
+
+if ($row['itemname']=="Lettuce")
+{
+$lettuce=$row['keep'];
+}
+
+if ($row['itemname']=="Vegetable")
+{
+$vegetables=$row['keep'];
+}
+
+if ($row['itemname']=="Oil")
+{
+$oil=$row['keep'];
+}
+
+if ($row['itemname']=="Vinegar")
+{
+$vinegar=$row['keep'];
+}
+
+if ($row['itemname']=="Salt")
+{
+$salt=$row['keep'];
+}
+ if ($row['itemname']=="Aloe")
+ {
+ $aloe=$row['keep'];
+ }
+if ($row['itemname']=="Bottle")
+ {
+ $potionbottle=$row['keep'];
+ }
+ if ($row['itemname']=="Life Potion 1")
+ {
+ $lifepotion1=$row['keep'];
+ }
+ if ($row['itemname']=="Egg")
+ {
+ $eggs=$row['keep'];
+ }
+ if ($row['itemname']=="Rat Tail")
+ {
+ $rattail=$row['keep'];
+ }
+ if ($row['itemname']=="Dreaded Disease 1")
+ {
+ $ddisease1=$row['keep'];
+ }
+ 
+}
+
+?>
