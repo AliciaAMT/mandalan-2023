@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "mandalan-tales": {
+      "hosting": {
+        "app": [
+          "mandalan-tales"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "mandalan-tales"
+  }
+}
