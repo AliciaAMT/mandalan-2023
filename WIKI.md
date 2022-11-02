@@ -407,6 +407,9 @@ Your character's class will slightly affect your starting attributes.
 # Locations
 ## Maps
 - [Stoya](/src/assets/images/map.jpg)
+- [Map Collection](/src/assets//images/maps.html)
+- Pyramid missing but is in the code
+
 
 [Top](#mandalan-tales)
 

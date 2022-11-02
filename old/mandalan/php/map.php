@@ -15,7 +15,7 @@ while($row = mysql_fetch_array($result))
   echo $row['xaxis']-1;
   echo $row['yaxis']+1;
   echo ".png\" class=\"map\">";
-  
+
   if ($row['map']=="pyramidb")
   {
   if ($anubis=="0")
@@ -27,23 +27,23 @@ while($row = mysql_fetch_array($result))
   echo $row['yaxis']+1;
   echo ".png\" class=\"map\" border=\"0\"></a>";
   }
-  
+
   else
   {
-  
+
   echo"<a href=\"movenorth.php?".time();
   echo "\"><img src=\"images/";
   echo $row['map'];
   echo $row['xaxis'];
   echo $row['yaxis']+1;
   echo ".png\" class=\"map\" border=\"0\"></a>";
-  
+
   }
   }
-  
+
   else
-  { 
-  
+  {
+
   echo"<a href=\"movenorth.php?".time();
   echo "\"><img src=\"images/";
   echo $row['map'];
@@ -51,7 +51,7 @@ while($row = mysql_fetch_array($result))
   echo $row['yaxis']+1;
   echo ".png\" class=\"map\" border=\"0\"></a>";
   }
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']+1;
@@ -227,10 +227,10 @@ if ($row['mapdimensions']==33 and $row['xaxis']==2 and $row['yaxis']==1)
   echo $row['xaxis']-1;
   echo $row['yaxis']+1;
   echo ".png\" class=\"map\">";
-  
+
   if ($row['map']=="pyramidb")
   {
-  
+
   $rand=mt_rand(1,10);
   if ($rand<7)
   {
@@ -241,7 +241,7 @@ if ($row['mapdimensions']==33 and $row['xaxis']==2 and $row['yaxis']==1)
   echo $row['yaxis']+1;
   echo ".png\" class=\"map\" border=\"0\"></a>";
   }
-  
+
   else
   {
   echo "<a href=\"movenorth.php?".time();
@@ -261,26 +261,26 @@ if ($row['mapdimensions']==33 and $row['xaxis']==2 and $row['yaxis']==1)
   echo $row['yaxis']+1;
   echo ".png\" class=\"map\" border=\"0\"></a>";
   }
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']+1;
   echo $row['yaxis']+1;
   echo ".png\" class=\"map\"><br />";
-  
+
   if ($row['map']=="pyramidb")
   {
   $rand=mt_rand(1,10);
   if ($rand>7)
   {
-  
+
   echo "<a href=\"montsers/giantsnake.php?".time();
   echo "\"><img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
   echo $row['yaxis'];
   echo ".png\" class=\"map\"  border=\"0\"></a>";
-  
+
   }
   else
   {
@@ -292,9 +292,9 @@ if ($row['mapdimensions']==33 and $row['xaxis']==2 and $row['yaxis']==1)
   echo ".png\" class=\"map\"  border=\"0\"></a>";
   }
 
-  
-  
-  
+
+
+
   }
   else
   {
@@ -305,18 +305,18 @@ if ($row['mapdimensions']==33 and $row['xaxis']==2 and $row['yaxis']==1)
   echo $row['yaxis'];
   echo ".png\" class=\"map\"  border=\"0\"></a>";
   }
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis'];
   echo $row['yaxis'];
   echo "s.png\" class=\"map\">";
-  
+
   if ($row['map']=="pyramidb")
   {
-   
+
   $rand=mt_rand(1,10);
-  
+
   if ($rand>7)
   {
   echo "<a href=\"monsters/giantsnake.php?".time();
@@ -326,7 +326,7 @@ if ($row['mapdimensions']==33 and $row['xaxis']==2 and $row['yaxis']==1)
   echo $row['yaxis'];
   echo ".png\" class=\"map\" border=\"0\"></a>";
   }
-  
+
   else
   {
   echo "<a href=\"moveeast.php?".time();
@@ -337,22 +337,22 @@ if ($row['mapdimensions']==33 and $row['xaxis']==2 and $row['yaxis']==1)
   echo ".png\" class=\"map\" border=\"0\"></a>";
   }
   }
-  
+
   else
-  
+
   {
-  
+
   echo "<a href=\"moveeast.php?".time();
   echo "\"><img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']+1;
   echo $row['yaxis'];
   echo ".png\" class=\"map\" border=\"0\"></a>";
-  
+
   }
-  
-  
-  
+
+
+
   echo "<br /><img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -544,7 +544,7 @@ if ($row['mapdimensions']==33 and $row['xaxis']==1 and $row['yaxis']==1)
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-  
+
   }
   else
   {
@@ -638,15 +638,13 @@ if ($row['mapdimensions']==33 and $row['xaxis']==3 and $row['yaxis']==1)
 
 if ($row['mapdimensions']==00)
 {
-if ($row['map']=="cellar")
-{
+if ($row['map']=="cellar") {
 if ($row['mapdimensions']==00 and $row['map']=="cellar" and $row['xaxis']==2 and $row['yaxis']==1)
   {
-  
+
   $rand=mt_rand(1,100);
-  
-  if ($rand>80)
-  {
+
+  if ($rand>80) {
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -688,8 +686,7 @@ if ($row['mapdimensions']==00 and $row['map']=="cellar" and $row['xaxis']==2 and
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-  else 
-  {
+  else  {
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -731,17 +728,17 @@ if ($row['mapdimensions']==00 and $row['map']=="cellar" and $row['xaxis']==2 and
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-  
+
   	}
 
 if ($row['mapdimensions']==00 and $row['map']=="cellar" and $row['xaxis']==1 and $row['yaxis']==1)
   {
   $rand=mt_rand(1,100);
-  
+
   if ($rand>80)
   {
   //********
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -783,7 +780,7 @@ if ($row['mapdimensions']==00 and $row['map']=="cellar" and $row['xaxis']==1 and
   echo ".png\" class=\"map\">";
 	}
 
-  
+
   //********
 
   else
@@ -833,7 +830,7 @@ if ($row['mapdimensions']==00 and $row['map']=="cellar" and $row['xaxis']==1 and
 if ($row['mapdimensions']==00 and $row['map']=="cellar" and $row['xaxis']==3 and $row['yaxis']==1)
   {
   $rand=mt_rand(1,100);
-  
+
   if ($rand>80)
   {
   echo "<img src=\"images/";
@@ -876,7 +873,7 @@ if ($row['mapdimensions']==00 and $row['map']=="cellar" and $row['xaxis']==3 and
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-  else 
+  else
   {
   echo "<img src=\"images/";
   echo $row['map'];
@@ -1290,7 +1287,7 @@ $rand=mt_rand(1,100);
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-  
+
   else
   {
   echo "<img src=\"images/";
@@ -1342,7 +1339,7 @@ if ($row['mapdimensions']==00 and $row['map']=="cellar" and $row['xaxis']==3 and
   $rand=mt_rand(1,100);
   if ($rand>80)
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -1439,7 +1436,7 @@ if ($row['mapdimensions']==00 and $row['map']=="cellar" and $row['xaxis']==1 and
   $rand=mt_rand(1,100);
   if ($rand>80)
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -1482,7 +1479,7 @@ if ($row['mapdimensions']==00 and $row['map']=="cellar" and $row['xaxis']==1 and
   }
   else
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -1575,7 +1572,7 @@ if ($row['mapdimensions']==00 and $row['map']=="cellar" and $row['xaxis']==3 and
   $rand=mt_rand(1,100);
   if ($rand>80)
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -1720,8 +1717,7 @@ echo "<img src=\"images/";
   echo ".png\" class=\"map\">";
 	}
 
-if ($row['mapdimensions']==00 and $row['map']=="cellar" and $row['xaxis']==2 and $row['yaxis']==6)
-  {
+if ($row['mapdimensions']==00 and $row['map']=="cellar" and $row['xaxis']==2 and $row['yaxis']==6) {
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -1762,14 +1758,13 @@ if ($row['mapdimensions']==00 and $row['map']=="cellar" and $row['xaxis']==2 and
   echo ".png\" class=\"map\">";
 	}
 }
- 
-if ($row['map']=="cave")
-{
+
+if ($row['map']=="cave") {
 if ($row['mapdimensions']==00 and $row['map']=="cave" and $row['xaxis']==1 and $row['yaxis']==3)
   {
-  
+
   $rand=mt_rand(1,100);
-  
+
   if ($rand>70)
   {
   echo "<img src=\"images/";
@@ -1811,7 +1806,7 @@ if ($row['mapdimensions']==00 and $row['map']=="cave" and $row['xaxis']==1 and $
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-  else 
+  else
   {
   echo "<img src=\"images/";
   echo $row['map'];
@@ -1852,14 +1847,14 @@ if ($row['mapdimensions']==00 and $row['map']=="cave" and $row['xaxis']==1 and $
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-  
+
   	}
 
 if ($row['mapdimensions']==00 and $row['map']=="cave" and $row['xaxis']==2 and $row['yaxis']==3)
   {
-  
+
   $rand=mt_rand(1,100);
-  
+
   if ($rand>70)
   {
   echo "<img src=\"images/";
@@ -1902,7 +1897,7 @@ if ($row['mapdimensions']==00 and $row['map']=="cave" and $row['xaxis']==2 and $
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-  else 
+  else
   {
   echo "<img src=\"images/";
   echo $row['map'];
@@ -1944,12 +1939,12 @@ if ($row['mapdimensions']==00 and $row['map']=="cave" and $row['xaxis']==2 and $
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-  
+
   	}
 
 if ($row['mapdimensions']==00 and $row['map']=="cave" and $row['xaxis']==3 and $row['yaxis']==3)
   {
-  
+
   $rand=mt_rand(1,100);
   if ($rand>70)
   {
@@ -1995,7 +1990,7 @@ if ($row['mapdimensions']==00 and $row['map']=="cave" and $row['xaxis']==3 and $
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-  
+
   else
   {
   echo "<img src=\"images/";
@@ -2041,12 +2036,12 @@ if ($row['mapdimensions']==00 and $row['map']=="cave" and $row['xaxis']==3 and $
   echo ".png\" class=\"map\">";
   }
   	}
-	
+
 if ($row['mapdimensions']==00 and $row['map']=="cave" and $row['xaxis']==4 and $row['yaxis']==3)
   {
-  
+
   $rand=mt_rand(1,100);
-  
+
   if ($rand>70)
   {
   echo "<img src=\"images/";
@@ -2089,7 +2084,7 @@ if ($row['mapdimensions']==00 and $row['map']=="cave" and $row['xaxis']==4 and $
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-  else 
+  else
   {
   echo "<img src=\"images/";
   echo $row['map'];
@@ -2131,15 +2126,14 @@ if ($row['mapdimensions']==00 and $row['map']=="cave" and $row['xaxis']==4 and $
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-  
+
   	}
-	
+
 if ($row['mapdimensions']==00 and $row['map']=="cave" and $row['xaxis']==5 and $row['yaxis']==3)
   {
-  
+
   $rand=mt_rand(1,100);
-  if ($rand>70)
-  {
+  if ($rand>70) {
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -2182,7 +2176,7 @@ if ($row['mapdimensions']==00 and $row['map']=="cave" and $row['xaxis']==5 and $
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-  
+
   else
   {
   echo "<img src=\"images/";
@@ -2232,7 +2226,7 @@ if ($row['mapdimensions']==00 and $row['map']=="cave" and $row['xaxis']==5 and $
 if ($row['mapdimensions']==00 and $row['map']=="cave" and $row['xaxis']==6 and $row['yaxis']==3)
    {
   $rand=mt_rand(1,100);
-  
+
   if ($rand>70)
   {
   echo "<img src=\"images/";
@@ -2275,7 +2269,7 @@ if ($row['mapdimensions']==00 and $row['map']=="cave" and $row['xaxis']==6 and $
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-  else 
+  else
   {
   echo "<img src=\"images/";
   echo $row['map'];
@@ -2317,13 +2311,13 @@ if ($row['mapdimensions']==00 and $row['map']=="cave" and $row['xaxis']==6 and $
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-  
-  	}	
+
+  	}
 if ($row['mapdimensions']==00 and $row['map']=="cave" and $row['xaxis']==7 and $row['yaxis']==3)
  {
-  
+
   $rand=mt_rand(1,100);
-  
+
   if ($rand>70)
   {
   echo "<img src=\"images/";
@@ -2366,7 +2360,7 @@ if ($row['mapdimensions']==00 and $row['map']=="cave" and $row['xaxis']==7 and $
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-  else 
+  else
   {
   echo "<img src=\"images/";
   echo $row['map'];
@@ -2407,11 +2401,11 @@ if ($row['mapdimensions']==00 and $row['map']=="cave" and $row['xaxis']==7 and $
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-  
+
   	}
 if ($row['mapdimensions']==00 and $row['map']=="cave" and $row['xaxis']==3 and $row['yaxis']==2)
   {
-  
+
   $rand=mt_rand(1,100);
   if ($rand>70)
   {
@@ -2455,7 +2449,7 @@ if ($row['mapdimensions']==00 and $row['map']=="cave" and $row['xaxis']==3 and $
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-  
+
   else
   {
   echo "<img src=\"images/";
@@ -2502,7 +2496,7 @@ if ($row['mapdimensions']==00 and $row['map']=="cave" and $row['xaxis']==3 and $
 
 if ($row['mapdimensions']==00 and $row['map']=="cave" and $row['xaxis']==3 and $row['yaxis']==4)
   {
-  
+
   $rand=mt_rand(1,100);
   if ($rand>70)
   {
@@ -2546,7 +2540,7 @@ if ($row['mapdimensions']==00 and $row['map']=="cave" and $row['xaxis']==3 and $
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-  
+
   else
   {
   echo "<img src=\"images/";
@@ -2593,7 +2587,7 @@ if ($row['mapdimensions']==00 and $row['map']=="cave" and $row['xaxis']==3 and $
 
 if ($row['mapdimensions']==00 and $row['map']=="cave" and $row['xaxis']==5 and $row['yaxis']==2)
   {
-  
+
   $rand=mt_rand(1,100);
   if ($rand>70)
   {
@@ -2637,7 +2631,7 @@ if ($row['mapdimensions']==00 and $row['map']=="cave" and $row['xaxis']==5 and $
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-  
+
   else
   {
   echo "<img src=\"images/";
@@ -2684,7 +2678,7 @@ if ($row['mapdimensions']==00 and $row['map']=="cave" and $row['xaxis']==5 and $
 
 if ($row['mapdimensions']==00 and $row['map']=="cave" and $row['xaxis']==5 and $row['yaxis']==4)
   {
-  
+
   $rand=mt_rand(1,100);
   if ($rand>70)
   {
@@ -2728,7 +2722,7 @@ if ($row['mapdimensions']==00 and $row['map']=="cave" and $row['xaxis']==5 and $
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-  
+
   else
   {
   echo "<img src=\"images/";
@@ -2775,7 +2769,7 @@ if ($row['mapdimensions']==00 and $row['map']=="cave" and $row['xaxis']==5 and $
 
 if ($row['mapdimensions']==00 and $row['map']=="cave" and $row['xaxis']==5 and $row['yaxis']==5)
   {
-  
+
   $rand=mt_rand(1,100);
   if ($rand>70)
   {
@@ -2818,7 +2812,7 @@ if ($row['mapdimensions']==00 and $row['map']=="cave" and $row['xaxis']==5 and $
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-  
+
   else
   {
   echo "<img src=\"images/";
@@ -2864,7 +2858,7 @@ if ($row['mapdimensions']==00 and $row['map']=="cave" and $row['xaxis']==5 and $
 
 if ($row['mapdimensions']==00 and $row['map']=="cave" and $row['xaxis']==3 and $row['yaxis']==5)
   {
-  
+
   $rand=mt_rand(1,100);
   if ($rand>70)
   {
@@ -2907,7 +2901,7 @@ if ($row['mapdimensions']==00 and $row['map']=="cave" and $row['xaxis']==3 and $
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-  
+
   else
   {
   echo "<img src=\"images/";
@@ -2950,10 +2944,10 @@ if ($row['mapdimensions']==00 and $row['map']=="cave" and $row['xaxis']==3 and $
   echo ".png\" class=\"map\">";
   }
   	}
-	
+
 if ($row['mapdimensions']==00 and $row['map']=="cave" and $row['xaxis']==5 and $row['yaxis']==1)
   {
-  
+
   $rand=mt_rand(1,100);
   if ($rand>70)
   {
@@ -2996,7 +2990,7 @@ if ($row['mapdimensions']==00 and $row['map']=="cave" and $row['xaxis']==5 and $
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-  
+
   else
   {
   echo "<img src=\"images/";
@@ -3042,7 +3036,7 @@ if ($row['mapdimensions']==00 and $row['map']=="cave" and $row['xaxis']==5 and $
 
 	if ($row['mapdimensions']==00 and $row['map']=="cave" and $row['xaxis']==3 and $row['yaxis']==1)
   {
-  
+
   $rand=mt_rand(1,100);
   if ($rand>70)
   {
@@ -3085,7 +3079,7 @@ if ($row['mapdimensions']==00 and $row['map']=="cave" and $row['xaxis']==5 and $
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-  
+
   else
   {
   echo "<img src=\"images/";
@@ -3134,12 +3128,12 @@ if ($row['map']=="pyramida")
 
 if ($row['xaxis']==6 and $row['yaxis']==1)
   {
-  
+
   $rand=mt_rand(1,100);
-  
+
   if ($rand>70)
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -3181,7 +3175,7 @@ if ($row['xaxis']==6 and $row['yaxis']==1)
   }
   else
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -3225,12 +3219,12 @@ if ($row['xaxis']==6 and $row['yaxis']==1)
 
 if ($row['xaxis']==6 and $row['yaxis']==2)
   {
-  
+
   $rand=mt_rand(1,100);
-  
+
   if ($rand>70)
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -3273,7 +3267,7 @@ if ($row['xaxis']==6 and $row['yaxis']==2)
   }
   else
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -3314,16 +3308,16 @@ if ($row['xaxis']==6 and $row['yaxis']==2)
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-	}	
-	
+	}
+
 if ($row['xaxis']==6 and $row['yaxis']==3)
   {
-  
+
   $rand=mt_rand(1,100);
-  
+
   if ($rand>70)
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -3366,7 +3360,7 @@ if ($row['xaxis']==6 and $row['yaxis']==3)
   }
   else
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -3407,16 +3401,16 @@ if ($row['xaxis']==6 and $row['yaxis']==3)
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-	}	
-	
+	}
+
 if ($row['xaxis']==6 and $row['yaxis']==4)
   {
-  
+
   $rand=mt_rand(1,100);
-  
+
   if ($rand>70)
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -3459,7 +3453,7 @@ if ($row['xaxis']==6 and $row['yaxis']==4)
   }
   else
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -3500,16 +3494,16 @@ if ($row['xaxis']==6 and $row['yaxis']==4)
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-	}	
-	
+	}
+
 if ($row['xaxis']==6 and $row['yaxis']==5)
   {
-  
+
   $rand=mt_rand(1,100);
-  
+
   if ($rand>70)
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -3552,7 +3546,7 @@ if ($row['xaxis']==6 and $row['yaxis']==5)
   }
   else
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -3593,16 +3587,16 @@ if ($row['xaxis']==6 and $row['yaxis']==5)
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-	}	
+	}
 
 if ($row['xaxis']==6 and $row['yaxis']==6)
   {
-  
+
   $rand=mt_rand(1,100);
-  
+
   if ($rand>70)
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -3647,7 +3641,7 @@ if ($row['xaxis']==6 and $row['yaxis']==6)
   }
   else
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -3690,16 +3684,16 @@ if ($row['xaxis']==6 and $row['yaxis']==6)
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-	}	
+	}
 
 if ($row['xaxis']==5 and $row['yaxis']==6)
   {
-  
+
   $rand=mt_rand(1,100);
-  
+
   if ($rand>70)
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -3742,7 +3736,7 @@ if ($row['xaxis']==5 and $row['yaxis']==6)
   }
   else
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -3783,16 +3777,16 @@ if ($row['xaxis']==5 and $row['yaxis']==6)
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-	}	
+	}
 
 if ($row['xaxis']==4 and $row['yaxis']==6)
   {
-  
+
   $rand=mt_rand(1,100);
-  
+
   if ($rand>70)
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -3835,7 +3829,7 @@ if ($row['xaxis']==4 and $row['yaxis']==6)
   }
   else
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -3876,16 +3870,16 @@ if ($row['xaxis']==4 and $row['yaxis']==6)
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-	}	
+	}
 
 if ($row['xaxis']==3 and $row['yaxis']==6)
   {
-  
+
   $rand=mt_rand(1,100);
-  
+
   if ($rand>70)
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -3928,7 +3922,7 @@ if ($row['xaxis']==3 and $row['yaxis']==6)
   }
   else
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -3969,16 +3963,16 @@ if ($row['xaxis']==3 and $row['yaxis']==6)
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-	}	
+	}
 
 if ($row['xaxis']==2 and $row['yaxis']==6)
   {
-  
+
   $rand=mt_rand(1,100);
-  
+
   if ($rand>70)
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -4021,7 +4015,7 @@ if ($row['xaxis']==2 and $row['yaxis']==6)
   }
   else
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -4062,16 +4056,16 @@ if ($row['xaxis']==2 and $row['yaxis']==6)
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-	}	
+	}
 
 if ($row['xaxis']==1 and $row['yaxis']==6)
   {
-  
+
   $rand=mt_rand(1,100);
-  
+
   if ($rand>70)
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -4114,7 +4108,7 @@ if ($row['xaxis']==1 and $row['yaxis']==6)
   }
   else
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -4155,11 +4149,11 @@ if ($row['xaxis']==1 and $row['yaxis']==6)
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-	}	
+	}
 
 if ($row['xaxis']==1 and $row['yaxis']==5)
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -4190,7 +4184,7 @@ if ($row['xaxis']==1 and $row['yaxis']==5)
   echo $row['xaxis']-1;
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
-  
+
   if ($giantscorpion==0)
 {
 echo "<a href=\"monsters/giantscorpion.php?".time()."\"><img src=\"images/";
@@ -4209,24 +4203,23 @@ echo "<a href=\"movesouth.php?".time();
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\" border=\"0\"></a>";
 }
-  
-  
+
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']+1;
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
-  
-	}	
 
-if ($row['xaxis']==1 and $row['yaxis']==4)
-  {
-  
+	}
+
+if ($row['xaxis']==1 and $row['yaxis']==4) {
+
   $rand=mt_rand(1,100);
-  
+
   if ($rand>70)
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -4270,7 +4263,7 @@ if ($row['xaxis']==1 and $row['yaxis']==4)
   }
   else
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -4312,16 +4305,16 @@ if ($row['xaxis']==1 and $row['yaxis']==4)
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-	}	
+	}
 
 if ($row['xaxis']==1 and $row['yaxis']==3)
   {
-  
+
   $rand=mt_rand(1,100);
-  
+
   if ($rand>70)
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -4365,7 +4358,7 @@ if ($row['xaxis']==1 and $row['yaxis']==3)
   }
   else
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -4407,16 +4400,16 @@ if ($row['xaxis']==1 and $row['yaxis']==3)
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-	}	
+	}
 
 if ($row['xaxis']==1 and $row['yaxis']==2)
   {
-  
+
   $rand=mt_rand(1,100);
-  
+
   if ($rand>70)
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -4459,7 +4452,7 @@ if ($row['xaxis']==1 and $row['yaxis']==2)
   }
   else
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -4500,16 +4493,16 @@ if ($row['xaxis']==1 and $row['yaxis']==2)
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-	}	
+	}
 
 if ($row['xaxis']==2 and $row['yaxis']==4)
   {
-  
+
   $rand=mt_rand(1,100);
-  
+
   if ($rand>70)
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -4553,7 +4546,7 @@ if ($row['xaxis']==2 and $row['yaxis']==4)
   }
   else
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -4595,16 +4588,16 @@ if ($row['xaxis']==2 and $row['yaxis']==4)
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-	}	
+	}
 
 if ($row['xaxis']==2 and $row['yaxis']==3)
   {
-  
+
   $rand=mt_rand(1,100);
-  
+
   if ($rand>70)
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -4649,7 +4642,7 @@ if ($row['xaxis']==2 and $row['yaxis']==3)
   }
   else
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -4692,16 +4685,16 @@ if ($row['xaxis']==2 and $row['yaxis']==3)
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-	}	
+	}
 
 if ($row['xaxis']==2 and $row['yaxis']==2)
   {
-  
+
   $rand=mt_rand(1,100);
-  
+
   if ($rand>70)
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -4745,7 +4738,7 @@ if ($row['xaxis']==2 and $row['yaxis']==2)
   }
   else
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -4787,16 +4780,16 @@ if ($row['xaxis']==2 and $row['yaxis']==2)
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-	}	
+	}
 
 if ($row['xaxis']==3 and $row['yaxis']==4)
   {
-  
+
   $rand=mt_rand(1,100);
-  
+
   if ($rand>70)
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -4839,7 +4832,7 @@ if ($row['xaxis']==3 and $row['yaxis']==4)
   }
   else
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -4880,16 +4873,16 @@ if ($row['xaxis']==3 and $row['yaxis']==4)
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-	}	
+	}
 
 if ($row['xaxis']==3 and $row['yaxis']==3)
   {
-  
+
   $rand=mt_rand(1,100);
-  
+
   if ($rand>70)
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -4933,7 +4926,7 @@ if ($row['xaxis']==3 and $row['yaxis']==3)
   }
   else
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -4975,16 +4968,16 @@ if ($row['xaxis']==3 and $row['yaxis']==3)
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-	}	
+	}
 
 if ($row['xaxis']==3 and $row['yaxis']==2)
   {
-  
+
   $rand=mt_rand(1,100);
-  
+
   if ($rand>70)
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -5027,7 +5020,7 @@ if ($row['xaxis']==3 and $row['yaxis']==2)
   }
   else
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -5068,16 +5061,16 @@ if ($row['xaxis']==3 and $row['yaxis']==2)
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-	}	
+	}
 
 if ($row['xaxis']==7 and $row['yaxis']==6)
   {
-  
+
   $rand=mt_rand(1,100);
-  
+
   if ($rand>70)
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -5120,7 +5113,7 @@ if ($row['xaxis']==7 and $row['yaxis']==6)
   }
   else
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -5161,16 +5154,16 @@ if ($row['xaxis']==7 and $row['yaxis']==6)
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-	}	
-	
+	}
+
 if ($row['xaxis']==8 and $row['yaxis']==6)
   {
-  
+
   $rand=mt_rand(1,100);
-  
+
   if ($rand>70)
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -5213,7 +5206,7 @@ if ($row['xaxis']==8 and $row['yaxis']==6)
   }
   else
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -5254,16 +5247,16 @@ if ($row['xaxis']==8 and $row['yaxis']==6)
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-	}	
-	
+	}
+
 if ($row['xaxis']==9 and $row['yaxis']==6)
   {
-  
+
   $rand=mt_rand(1,100);
-  
+
   if ($rand>70)
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -5306,7 +5299,7 @@ if ($row['xaxis']==9 and $row['yaxis']==6)
   }
   else
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -5347,16 +5340,16 @@ if ($row['xaxis']==9 and $row['yaxis']==6)
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-	}	
+	}
 
 if ($row['xaxis']==10 and $row['yaxis']==6)
   {
-  
+
   $rand=mt_rand(1,100);
-  
+
   if ($rand>70)
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -5399,7 +5392,7 @@ if ($row['xaxis']==10 and $row['yaxis']==6)
   }
   else
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -5440,16 +5433,16 @@ if ($row['xaxis']==10 and $row['yaxis']==6)
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-	}	
+	}
 
 if ($row['xaxis']==11 and $row['yaxis']==6)
   {
-  
+
   $rand=mt_rand(1,100);
-  
+
   if ($rand>70)
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -5492,7 +5485,7 @@ if ($row['xaxis']==11 and $row['yaxis']==6)
   }
   else
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -5533,16 +5526,16 @@ if ($row['xaxis']==11 and $row['yaxis']==6)
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-	}	
-	
+	}
+
 if ($row['xaxis']==12 and $row['yaxis']==6)
   {
-  
+
   $rand=mt_rand(1,100);
-  
+
   if ($rand>70)
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -5585,7 +5578,7 @@ if ($row['xaxis']==12 and $row['yaxis']==6)
   }
   else
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -5626,11 +5619,11 @@ if ($row['xaxis']==12 and $row['yaxis']==6)
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-	}	
-		
+	}
+
 if ($row['xaxis']==12 and $row['yaxis']==5)
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -5661,7 +5654,7 @@ if ($row['xaxis']==12 and $row['yaxis']==5)
   echo $row['xaxis']-1;
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
-  
+
   if ($giantbat==0)
 {
 echo "<a href=\"monsters/giantbat.php?".time()."\"><img src=\"images/";
@@ -5680,24 +5673,24 @@ echo "<a href=\"movesouth.php?".time();
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\" border=\"0\"></a>";
 }
-  
-  
+
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']+1;
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
-  
-	}	
+
+	}
 
 if ($row['xaxis']==12 and $row['yaxis']==4)
   {
-  
+
   $rand=mt_rand(1,100);
-  
+
   if ($rand>70)
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -5741,7 +5734,7 @@ if ($row['xaxis']==12 and $row['yaxis']==4)
   }
   else
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -5783,16 +5776,16 @@ if ($row['xaxis']==12 and $row['yaxis']==4)
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-	}	
+	}
 
 	if ($row['xaxis']==12 and $row['yaxis']==3)
   {
-  
+
   $rand=mt_rand(1,100);
-  
+
   if ($rand>70)
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -5836,7 +5829,7 @@ if ($row['xaxis']==12 and $row['yaxis']==4)
   }
   else
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -5878,16 +5871,16 @@ if ($row['xaxis']==12 and $row['yaxis']==4)
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-	}	
+	}
 
 	if ($row['xaxis']==12 and $row['yaxis']==2)
   {
-  
+
   $rand=mt_rand(1,100);
-  
+
   if ($rand>70)
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -5930,7 +5923,7 @@ if ($row['xaxis']==12 and $row['yaxis']==4)
   }
   else
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -5971,16 +5964,16 @@ if ($row['xaxis']==12 and $row['yaxis']==4)
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-	}	
+	}
 
 	if ($row['xaxis']==11 and $row['yaxis']==4)
   {
-  
+
   $rand=mt_rand(1,100);
-  
+
   if ($rand>70)
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -6024,7 +6017,7 @@ if ($row['xaxis']==12 and $row['yaxis']==4)
   }
   else
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -6066,16 +6059,16 @@ if ($row['xaxis']==12 and $row['yaxis']==4)
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-	}	
+	}
 
 	if ($row['xaxis']==11 and $row['yaxis']==3)
   {
-  
+
   $rand=mt_rand(1,100);
-  
+
   if ($rand>70)
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -6120,7 +6113,7 @@ if ($row['xaxis']==12 and $row['yaxis']==4)
   }
   else
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -6163,16 +6156,16 @@ if ($row['xaxis']==12 and $row['yaxis']==4)
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-	}	
+	}
 
 	if ($row['xaxis']==11 and $row['yaxis']==2)
   {
-  
+
   $rand=mt_rand(1,100);
-  
+
   if ($rand>70)
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -6216,7 +6209,7 @@ if ($row['xaxis']==12 and $row['yaxis']==4)
   }
   else
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -6258,16 +6251,16 @@ if ($row['xaxis']==12 and $row['yaxis']==4)
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-	}	
+	}
 
 	if ($row['xaxis']==10 and $row['yaxis']==4)
   {
-  
+
   $rand=mt_rand(1,100);
-  
+
   if ($rand>70)
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -6310,7 +6303,7 @@ if ($row['xaxis']==12 and $row['yaxis']==4)
   }
   else
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -6351,16 +6344,16 @@ if ($row['xaxis']==12 and $row['yaxis']==4)
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-	}	
+	}
 
 	if ($row['xaxis']==10 and $row['yaxis']==3)
   {
-  
+
   $rand=mt_rand(1,100);
-  
+
   if ($rand>70)
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -6404,7 +6397,7 @@ if ($row['xaxis']==12 and $row['yaxis']==4)
   }
   else
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -6447,16 +6440,16 @@ if ($row['xaxis']==12 and $row['yaxis']==4)
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-	}	
+	}
 
 	if ($row['xaxis']==10 and $row['yaxis']==2)
   {
-  
+
   $rand=mt_rand(1,100);
-  
+
   if ($rand>70)
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -6499,7 +6492,7 @@ if ($row['xaxis']==12 and $row['yaxis']==4)
   }
   else
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -6540,16 +6533,16 @@ if ($row['xaxis']==12 and $row['yaxis']==4)
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-	}	
+	}
 
 if ($row['xaxis']==6 and $row['yaxis']==7)
   {
-  
+
   $rand=mt_rand(1,100);
-  
+
   if ($rand>90)
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -6590,10 +6583,10 @@ if ($row['xaxis']==6 and $row['yaxis']==7)
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-  
+
   if ($rand>70 and $rand<91)
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -6634,11 +6627,11 @@ if ($row['xaxis']==6 and $row['yaxis']==7)
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-  
-  
+
+
   if ($rand<71)
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -6679,16 +6672,16 @@ if ($row['xaxis']==6 and $row['yaxis']==7)
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-	}	
+	}
 
 if ($row['xaxis']==6 and $row['yaxis']==8)
   {
-  
+
   $rand=mt_rand(1,100);
-  
+
   if ($rand>90)
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -6729,10 +6722,10 @@ if ($row['xaxis']==6 and $row['yaxis']==8)
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-  
+
   if ($rand>70 and $rand<91)
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -6773,12 +6766,12 @@ if ($row['xaxis']==6 and $row['yaxis']==8)
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-  
-  
-  
+
+
+
 if ($rand<71)
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -6819,18 +6812,18 @@ if ($rand<71)
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-	}	
+	}
 
 if ($row['xaxis']==6 and $row['yaxis']==9)
   {
-  
-  
+
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
   echo $row['yaxis']+1;
   echo ".png\" class=\"map\">";
-  
+
    if ($giantsnake==0)
 {
 echo "<a href=\"monsters/giantsnake.php?".time()."\"><img src=\"images/";
@@ -6849,7 +6842,7 @@ echo "<a href=\"movenorth.php?".time();
   echo $row['yaxis']+1;
   echo ".png\" class=\"map\" border=\"0\"></a>";
 }
-  
+
   echo"<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']+1;
@@ -6880,17 +6873,17 @@ echo "<a href=\"movenorth.php?".time();
   echo $row['xaxis']+1;
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
- 
-	}	
+
+	}
 
 if ($row['xaxis']==6 and $row['yaxis']==10)
   {
-  
+
   $rand=mt_rand(1,100);
-  
+
   if ($rand>90)
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -6933,10 +6926,10 @@ if ($row['xaxis']==6 and $row['yaxis']==10)
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-  
+
   if ($rand>70 and $rand<91)
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -6979,12 +6972,12 @@ if ($row['xaxis']==6 and $row['yaxis']==10)
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-  
-  
-  
+
+
+
   if ($rand<71)
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -7027,16 +7020,16 @@ if ($row['xaxis']==6 and $row['yaxis']==10)
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-	}	
-	
+	}
+
 if ($row['xaxis']==6 and $row['yaxis']==11)
   {
-  
+
   $rand=mt_rand(1,100);
-  
+
   if ($rand>90)
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -7079,10 +7072,10 @@ if ($row['xaxis']==6 and $row['yaxis']==11)
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-  
+
   if ($rand>70 and $rand<91)
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -7125,12 +7118,12 @@ if ($row['xaxis']==6 and $row['yaxis']==11)
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-  
-  
-  
+
+
+
   if ($rand<71)
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -7173,16 +7166,16 @@ if ($row['xaxis']==6 and $row['yaxis']==11)
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-	}	
-		
+	}
+
 if ($row['xaxis']==6 and $row['yaxis']==12)
   {
-  
+
   $rand=mt_rand(1,100);
-  
+
   if ($rand>90)
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -7224,10 +7217,10 @@ if ($row['xaxis']==6 and $row['yaxis']==12)
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-  
+
   if ($rand>70 and $rand<91)
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -7269,10 +7262,10 @@ if ($row['xaxis']==6 and $row['yaxis']==12)
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-  
+
   if ($rand<71)
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -7314,16 +7307,16 @@ if ($row['xaxis']==6 and $row['yaxis']==12)
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-	}	
-		
+	}
+
 if ($row['xaxis']==5 and $row['yaxis']==10)
   {
-  
+
   $rand=mt_rand(1,100);
-  
+
   if ($rand>90)
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -7364,10 +7357,10 @@ if ($row['xaxis']==5 and $row['yaxis']==10)
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-  
+
   if ($rand>70 and $rand<91)
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -7408,11 +7401,11 @@ if ($row['xaxis']==5 and $row['yaxis']==10)
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-  
-  
+
+
   if ($rand<71)
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -7453,16 +7446,16 @@ if ($row['xaxis']==5 and $row['yaxis']==10)
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-	}	
-	
+	}
+
 if ($row['xaxis']==5 and $row['yaxis']==11)
   {
-  
+
   $rand=mt_rand(1,100);
-  
+
   if ($rand>90)
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -7504,10 +7497,10 @@ if ($row['xaxis']==5 and $row['yaxis']==11)
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-  
+
   if ($rand>70 and $rand<91)
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -7549,10 +7542,10 @@ if ($row['xaxis']==5 and $row['yaxis']==11)
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-  
+
    if ($rand<71)
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -7594,16 +7587,16 @@ if ($row['xaxis']==5 and $row['yaxis']==11)
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-	}	
-		
+	}
+
 if ($row['xaxis']==5 and $row['yaxis']==12)
   {
-  
+
   $rand=mt_rand(1,100);
-  
+
   if ($rand>90)
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -7644,10 +7637,10 @@ if ($row['xaxis']==5 and $row['yaxis']==12)
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-  
+
   if ($rand>70 and $rand<91)
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -7688,10 +7681,10 @@ if ($row['xaxis']==5 and $row['yaxis']==12)
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-  
+
    if ($rand<71)
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -7732,16 +7725,16 @@ if ($row['xaxis']==5 and $row['yaxis']==12)
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-	}	
-	
+	}
+
 if ($row['xaxis']==7 and $row['yaxis']==10)
   {
-  
+
   $rand=mt_rand(1,100);
-  
+
   if ($rand>90)
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -7782,10 +7775,10 @@ if ($row['xaxis']==7 and $row['yaxis']==10)
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-  
+
   if ($rand>70 and $rand<91)
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -7826,10 +7819,10 @@ if ($row['xaxis']==7 and $row['yaxis']==10)
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-  
+
    if ($rand<71)
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -7870,16 +7863,16 @@ if ($row['xaxis']==7 and $row['yaxis']==10)
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-	}	
-	
+	}
+
 if ($row['xaxis']==7 and $row['yaxis']==11)
   {
-  
+
   $rand=mt_rand(1,100);
-  
+
   if ($rand>90)
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -7921,10 +7914,10 @@ if ($row['xaxis']==7 and $row['yaxis']==11)
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-  
+
   if ($rand>70 and $rand<91)
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -7966,10 +7959,10 @@ if ($row['xaxis']==7 and $row['yaxis']==11)
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-  
+
    if ($rand<71)
    {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -8011,16 +8004,16 @@ if ($row['xaxis']==7 and $row['yaxis']==11)
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-	}	
-		
+	}
+
 if ($row['xaxis']==7 and $row['yaxis']==12)
   {
-  
+
   $rand=mt_rand(1,100);
-  
+
   if ($rand>90)
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -8061,10 +8054,10 @@ if ($row['xaxis']==7 and $row['yaxis']==12)
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-  
+
   if ($rand>70 and $rand<91)
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -8105,11 +8098,11 @@ if ($row['xaxis']==7 and $row['yaxis']==12)
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-  
-  
+
+
   if ($rand<71)
   {
-  
+
   echo "<img src=\"images/";
   echo $row['map'];
   echo $row['xaxis']-1;
@@ -8150,11 +8143,11 @@ if ($row['xaxis']==7 and $row['yaxis']==12)
   echo $row['yaxis']-1;
   echo ".png\" class=\"map\">";
   }
-	}	
-		
+	}
 
-	
-	
+
+
+
 	}
 
 	}
@@ -8896,8 +8889,7 @@ if ($row['mapdimensions']==44 and $row['xaxis']==4 and $row['yaxis']==1)
 
 }
 
-if ($row['mapdimensions']==77)
-{
+if ($row['mapdimensions']==77){
 
 if ($row['mapdimensions']==77 and $row['xaxis']==2 and $row['yaxis']==2)
   {
@@ -10002,6 +9994,6 @@ if ($row['mapdimensions']==77 and $row['xaxis']==5 and $row['yaxis']==5)
 
 }
 
-} 
+}
 
 ?>
