@@ -4,12 +4,12 @@
 /** Ionic CSS Variables **/
 :root {
   /** primary **/
-  --ion-color-primary: #47fffc;
-  --ion-color-primary-rgb: 71, 255, 252;
+  --ion-color-primary: #38fcff;
+  --ion-color-primary-rgb: 56, 252, 255;
   --ion-color-primary-contrast: #000000;
   --ion-color-primary-contrast-rgb: 0, 0, 0;
-  --ion-color-primary-shade: #3ee0de;
-  --ion-color-primary-tint: #59fffc;
+  --ion-color-primary-shade: #31dee0;
+  --ion-color-primary-tint: #4cfcff;
 
   /** secondary **/
   --ion-color-secondary: #3dc2ff;
@@ -74,6 +74,26 @@
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
+
+  /** Colors **/
+
+    --ion-color-mydark: #545454;
+    --ion-color-mydark-rgb: 84,84,84;
+    --ion-color-mydark-contrast: #545454;
+    --ion-color-mydark-contrast-rgb: 84,84,84;
+    --ion-color-mydark-shade: #4a4a4a;
+    --ion-color-mydark-tint: #656565;
+
+
+}
+
+.ion-color-mydark {
+  --ion-color-base: var(--ion-color-mydark);
+  --ion-color-base-rgb: var(--ion-color-mydark-rgb);
+  --ion-color-contrast: var(--ion-color-mydark-contrast);
+  --ion-color-contrast-rgb: var(--ion-color-mydark-contrast-rgb);
+  --ion-color-shade: var(--ion-color-mydark-shade);
+  --ion-color-tint: var(--ion-color-mydark-tint);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -83,12 +103,12 @@
    */
 
   body {
-    --ion-color-primary: #47fffc;
-    --ion-color-primary-rgb: 71, 255, 252;
+    --ion-color-primary: #38fcff;
+    --ion-color-primary-rgb: 56, 252, 255;
     --ion-color-primary-contrast: #000000;
     --ion-color-primary-contrast-rgb: 0, 0, 0;
-    --ion-color-primary-shade: #3ee0de;
-    --ion-color-primary-tint: #59fffc;
+    --ion-color-primary-shade: #31dee0;
+    --ion-color-primary-tint: #4cfcff;
 
     --ion-color-secondary: #50c8ff;
     --ion-color-secondary-rgb: 80,200,255;
@@ -145,6 +165,14 @@
     --ion-color-light-contrast-rgb: 255,255,255;
     --ion-color-light-shade: #1e2023;
     --ion-color-light-tint: #383a3e;
+
+    --ion-color-mydark: #545454;
+    --ion-color-mydark-rgb: 84,84,84;
+    --ion-color-mydark-contrast: #545454;
+    --ion-color-mydark-contrast-rgb: 84,84,84;
+    --ion-color-mydark-shade: #4a4a4a;
+    --ion-color-mydark-tint: #656565;
+
   }
 
   /*
@@ -181,7 +209,7 @@
 
     --ion-item-background: #000000;
 
-    --ion-card-background: #1c1c1d;
+    --ion-card-background: #1c1c1c;
   }
 
   .ios ion-modal {
@@ -231,6 +259,89 @@
 
     --ion-tab-bar-background: #1f1f1f;
 
-    --ion-card-background: #1e1e1e;
+    --ion-card-background: rgb(35, 35, 35);
   }
+}
+ion-content {
+  --background: #000000;
+}
+ion-item {
+
+  --background: rgb(20, 20, 20);
+}
+ion-toolbar {
+  --background: rgb(88,88,88);
+  --background: linear-gradient(180deg, rgb(8, 8, 8) 0%, rgb(13, 13, 13) 35%, rgb(41, 41, 41) 100%);
+}
+
+.ql-toolbar .ql-stroke {
+  fill: none !important;
+  stroke: rgb(192, 192, 192) !important;
+}
+.ql-toolbar {
+  font-size: 30px;
+  background-color: rgb(16, 16, 16) !important;
+}
+.ql-toolbar .ql-fill {
+  fill: rgb(193, 193, 193) !important;
+  stroke: none !important;
+}
+
+.ql-toolbar .ql-picker {
+  color: rgb(192, 192, 192) !important;
+}
+.ql-editor {
+  background-color: rgb(0, 0, 0);
+  color: rgb(223, 223, 223);
+}
+
+
+// how to change quill background!!!
+// *********************************
+// span {
+//   // font-size: 30px !important;
+//   background: #000000;
+// }
+img {
+  border-radius: 15%;
+}
+
+// span {
+//   background: #101010 !important;
+// }
+// p {
+//   background: #101010 !important;
+// }
+html {
+  font-family: 'Philosopher', sans-serif;
+}
+ion-toolbar {
+  font-family: 'Philosopher', sans-serif;
+}
+ion-content {
+  font-family: 'Philosopher', sans-serif;
+}
+ion-item {
+  font-family: 'Philosopher', sans-serif;
+}
+ion-label {
+  font-family: 'Philosopher', sans-serif;
+}
+ion-button {
+  font-family: 'Philosopher', sans-serif;
+}
+ion-card {
+  font-family: 'Philosopher', sans-serif;
+}
+ion-card-header {
+  font-family: 'Philosopher', sans-serif;
+}
+ion-card-title {
+  font-family: 'Philosopher', sans-serif;
+}
+ion-card-subtitle {
+  font-family: 'Philosopher', sans-serif;
+}
+ion-card-content {
+  font-family: 'Philosopher', sans-serif;
 }

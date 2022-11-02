@@ -1,9 +1,27 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>intro</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
+	<ion-slides pager="true">
+		<!-- Slide 1 -->
+		<ion-slide>
+			<ion-text color="mydark">
+				<!-- <img
+					src="/img/blog/wp-img/ionicacademy.com-wp-content-uploads-2019-10-async-code-course.webp"
+				/> -->
+				<h1>The Way</h1>
+				<p>Not a religion... a RELATIONSHIP!</p>
+				<ion-button (click)="next()" fill="outline" color="mydark">Next</ion-button>
+			</ion-text>
+		</ion-slide>
 
+		<!-- Slide 2 -->
+		<ion-slide>
+			<ion-text color="mydark">
+				<!-- <img
+					src="/img/blog/wp-img/ionicacademy.com-wp-content-uploads-2020-06-ionic-everywhere-course.webp"
+				/> -->
+				<h1>Get To Know The Word...</h1>
+				<p>... and get to know Him!</p>
+				<ion-button (click)="start()" fill="outline" color="mydark">Start</ion-button>
+			</ion-text>
+		</ion-slide>
+	</ion-slides>
 </ion-content>
