@@ -121,7 +121,7 @@ Possible timeline: [Timeline](/src/assets/images/2021-03-31_00-45-28-e71ce88daef
 
 # Characters
 # NPCs
-Create a DNA sheet for the main character that inhabits your fictional world.
+Create a DNA sheet for the main characters that inhabits your fictional world. Especially the Lost Ones.
 
 Provide reference images (avoid images with watermarks/photo credits)
 
@@ -323,7 +323,85 @@ Your character's class will slightly affect your starting attributes.
 ### 4. Bleeding
 - Training in anatamy allows the skilled exotic master to strike areas of the body that will leave the victim wounded in such a way that they continue to bleed even after the attack for several turns.
 
-[Top](#mandalan-tales)
+## Fire
+### 1. Critical Hit
+- This skill provides the fire master knowledge for an increased chance for a critical hit and increased critical hit damage.
+
+### 2. Fire Resistance
+- As a Fire master learns to manipulate the flames, he also becomes resistant to thier burning heat.
+
+### 3. Smokescreen
+- With smoke surrounding your enemy, he will find it difficult to see you during attack. 
+
+### 4. Inferno
+- You learn to burn your enemy in such a way that the burning continues for several rounds.
+
+## Ice/Water
+### 1. Critical Hit
+- This skill provides the water master knowledge for an increased chance for a critical hit and increased critical hit damage.
+
+### 2. Water Resistance
+- As an water master learns to manipulate the water, he also becomes resistant to thier freezing cold.
+
+### 3. Coldblooded
+- With this skill you can cool the water in your blood to slow the glow and prevent severe bleeding.
+
+### 4. Dry Ice
+- You freeze your enemy in such a way that the next blow causes critical damage.
+
+## Earth
+### 1. Critical Hit
+- This skill provides the earth master knowledge for an increased chance for a critical hit and increased critical hit damage.
+
+### 2. Earth Resistance
+- As an earth master learns to manipulate the earth, he also becomes resistant to thier crushing force.
+
+### 3. Tremors
+- With this skill you can cause the earth to tremble and shake, causing your enemy to stumble and lose his balance. 
+
+### 4. Swarming Plague
+- You unleash a warm of poisonous insects that both distract and damage your enemies.
+
+## Air
+### 1. Critical Hit
+- This skill provides the air master knowledge for an increased chance for a critical hit and increased critical hit damage.
+
+### 2. Air Resistance
+- As an air master learns to manipulate the air, he also becomes resistant to its desructive forces.
+
+### 3. Stun
+- This skill increases the chances to stun your enemy with a zap of lightning.
+
+### 4. Reviving Jolt
+- Upon death you have a chance to jolt your heart back into rhythm restoring minimal life.
+
+## Light
+### 1. Critical Hit
+- This skill provides the light master knowledge for an increased chance for a critical hit and increased critical hit damage.
+
+### 2. Light Resistance
+- As an light master learns to manipulate the light, he also becomes resistant to its blinding power.
+
+### 3. Regeneration 
+- You learn to use light to regenerate your life and mana. 
+
+### 4. Ultimate Revive
+- Occassionally you are blessed by a burst of Light that revives your life and mana. 
+
+## Dark
+### 1. Critical Hit
+- This skill provides the dark master knowledge for an increased chance for a critical hit and increased critical hit damage.
+
+### 2. Dark Resistance
+- As an dark master learns to manipulate the dark, he also becomes resistant to its draining power.
+
+### 3. Vampiric Drain
+- You learn to drain the life from your enemies and use it to heal yourself.
+
+### 4. Eye of Despair
+- You practice a gaze that fills your opponent with so much despair they give up and allow themselves to be killed. 
+
+  [Top](#mandalan-tales)
 
 # Lore
 # Locations
