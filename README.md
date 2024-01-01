@@ -1,5 +1,6 @@
 Current Node v18.12.0
 
+Still works but there is no content yet  anyway. just start over, but keep this for reference. it has the wiki and timeline image and more. 
 # Mandalan Tales
 
 A text based, turn based mmorpg (massively multiplayer online role playing game) written with Ionic Angular(Typescript) and Firebase. This game is especially designed for accessibility and is playable with a screen reader on desktop and mobile. Originally written for a LAMP stack, it is being ported to Firebase for better performance and scalability.
