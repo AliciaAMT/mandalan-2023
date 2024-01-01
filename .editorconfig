@@ -14,3 +14,14 @@ quote_type = single
 [*.md]
 max_line_length = off
 trim_trailing_whitespace = false
+
+[*.php]
+# Disable all checks for PHP files
+insert_final_newline = ignore
+indent_style = ignore
+indent_size = ignore
+end_of_line = ignore
+charset = ignore
+trim_trailing_whitespace = ignore
+insert_final_newline = ignore
+max_line_length = ignore
