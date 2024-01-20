@@ -1,9 +1,71 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>login</ion-title>
-  </ion-toolbar>
+	<ion-toolbar>
+		<ion-title>Login</ion-title>
+	</ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-fab vertical="top" horizontal="start" slot="fixed">
+    <ion-fab-button routerLink="/landing" routerDirection="back">
+      <ion-icon name="arrow-back"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <ion-grid>
+    <ion-row>
+      <ion-col size-lg="4" offset-lg="4" size-md="6" offset-md="3" size-sm="8" offset-sm="2">
+        <form (ngSubmit)="login()" [formGroup]="credentials">
+          <div class="input-group">
+            <ion-item>
+              <ion-label position="stacked"><ion-icon name="mail-outline"></ion-icon> Email</ion-label>
+              <ion-input type="email" placeholder="Email" formControlName="email"></ion-input>
+            </ion-item>
+            <div *ngIf="(email.dirty || email.touched) && email.errors" class="errors">
+              <span *ngIf="email.errors?.required">Email is required</span>
+              <span *ngIf="email.errors?.email">Email is invalid</span>
+            </div>
 
+      <ion-item >
+        <ion-label position="stacked">
+          <ion-icon name="lock-closed-outline"></ion-icon>
+          Password
+        </ion-label>
+        <ion-input
+          [type]="showPwd ? 'text' : 'password'"
+          formControlName="password"
+        >
+        </ion-input>
+        <ion-icon
+          slot="end"
+          [name]="pwdIcon"
+          (click)="togglePwd()"
+        >
+        </ion-icon>
+      </ion-item>
+
+            <div *ngIf="(password.dirty || password.touched) && password.errors" class="errors">
+              <span *ngIf="password.errors?.required">Password is required</span>
+              <span *ngIf="password.errors?.minlength">Password needs to be 6 characters</span>
+            </div>
+          </div>
+
+          <ion-button type="submit" expand="block" [disabled]="!credentials.valid">Log in</ion-button>
+          <ion-button type="button" expand="block" [disabled]="!credentials.valid" (click)="register()">Create Account
+          </ion-button>
+            <ion-button type="button" expand="block" (click)="resetPassword()">Recover Password</ion-button>
+          <ion-button type="button" expand="block" color="tertiary" (click)="loginWithGoogle()" >
+            <ion-icon name="logo-google" slot="start"></ion-icon>
+            Sign in with Google
+          </ion-button>
+          <!-- <ion-button type="button" expand="block" color="tertiary">
+            <ion-icon name="logo-apple" slot="start"></ion-icon>
+            Sign in with Apple
+          </ion-button> -->
+        </form>
+        <div class="ion-padding">
+          By registering you agree to our <a routerLink="/license">Terms of Service and Privacy Policy</a>
+        </div>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

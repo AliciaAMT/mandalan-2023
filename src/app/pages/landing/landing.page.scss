@@ -1,0 +1,38 @@
+.text span {
+  opacity: 0;
+}
+.text span.revealed {
+  opacity: 1;
+}
+.text span.green {
+  color: #27ae60 !important;
+}
+.text span.red {
+  color: #ff0000;
+}
+
+
+/* Demo styles */
+// body {
+//   background: #393f43;
+//   padding: 3em;
+//   font-family: 'Sora', monospace;
+// }
+.text1 {
+  font-size: 6vw;
+  color: white;
+  word-spacing: 0.2em;
+  margin: 0 auto;
+  background: black;
+  padding: 1em;
+  border-bottom: 1vw solid #222527;
+  position:relative;
+  line-height: 1.2em;
+}
+// .corner {
+//   position:absolute;
+//   width: 10vw;
+//   right:2vw;
+//   bottom:0;
+//   transform: translateY(80%);
+// }
